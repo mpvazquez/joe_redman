@@ -1,0 +1,9 @@
+header {
+  background-color: yellow;
+}
+
+div.hero {
+  background-image: url(../images/joe-redman-01.png);
+  background-size: cover;
+  height: 100%;
+}
