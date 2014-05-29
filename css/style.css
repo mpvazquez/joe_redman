@@ -2,24 +2,43 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 header {
-  background-color: yellow;
-  text-align: center;
-}
-
-header li {
-  display: inline-block;
-  text-transform: uppercase;
   font-family: Roboto;
   font-size: 1.5em;
 }
 
+header li {
+  display: inline-block;
+  padding: 0 1.5em;
+}
+
+header a {
+  text-decoration: none;
+}
+
+nav {
+  display: inline-block;
+  float: right;
+}
+
 div.headline {
-  font-size: 3em;
-  font-family: Archivo Narrow;
+  vertical-align: middle;
+  padding-left: 3em;
+  display: inline-block;
+  float: left;
 }
 
 div.hero {
-  background-image: url(../images/joe-redman-01.png);
+  position: relative;
+  background-image: url(../images/joe-wall.jpg);
   background-size: cover;
-  height: 40em;
+  height: 60em;
+  clear: both;
+}
+
+div.latest {
+  position: absolute;
+  background-color: rgba(255, 255, 255, .8);
+  padding: 2em;
+  top: 10%;
+  left: 10%;
 }
