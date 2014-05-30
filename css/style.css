@@ -6,6 +6,9 @@ header {
   top: 0px;
   font-family: Roboto;
 }
+
+/* start nav bar */
+
 nav {
   display: inline-block;
   background-color: white;
@@ -28,6 +31,7 @@ nav ul {
   width: 65%;
   text-align: right;
   padding-right: 10%;
+  margin: .5em 0;
 }
 nav h1 {
   display: inline;
@@ -35,7 +39,9 @@ nav h1 {
   padding-left: 10%;
 }
 
-/* nav bar ends */
+/* end nav bar */
+
+/* start hero image and latest news */
 
 div.hero {
   position: relative;
@@ -43,8 +49,6 @@ div.hero {
   background-position: left;
   background-size: cover;
   height: 40em;
-  background-repeat: no-repeat;
-  clear: both;
 }
 div.latest-news {
   position: absolute;
@@ -53,16 +57,32 @@ div.latest-news {
   top: 10%;
   left: 10%;
   max-width: 15em;
+  text-align: justify;
 }
 div.latest-news h2 {
   margin-top: 0;
+  text-align: center;
+}
+div.latest-news ul {
+  padding-left:0;
+}
+div.latest-news ol {
+  margin-bottom: .5em;
+  list-style-type: none;
+  background-color: rgba(0, 0, 0, .08);
+  padding-left:0;
+}
+div.latest-news a {
+  text-decoration: none;
 }
 .fixed-bottom {
   position: fixed;
   bottom: 0;
 }
 
-#page-wrapper < div {
-  margin-right: 0;
-  margin-left: 0;
+/* end header */
+
+#page-wrapper > div {
+  margin-right: 10%;
+  margin-left: 10%;
 }
