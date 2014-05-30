@@ -45,19 +45,20 @@ nav h1 {
 
 div.hero {
   position: relative;
-  background-image: url(../images/joe-wall.jpg);
-  background-position: left;
+  background-image: url(../images/joe-wall2.jpg);
+  background-position: 0 -17em;
   background-size: cover;
   height: 40em;
+  /*width: 120%;*/
 }
 div.latest-news {
   position: absolute;
-  background-color: rgba(255, 255, 255, .8);
-  padding: 2em;
+  padding: 1.5em;
   top: 10%;
   left: 10%;
-  max-width: 15em;
+  max-width: 20em;
   text-align: justify;
+  background-color: rgba(255, 255, 255, .8);
 }
 div.latest-news h2 {
   margin-top: 0;
@@ -67,17 +68,30 @@ div.latest-news ul {
   padding-left:0;
 }
 div.latest-news ol {
+  padding-left:0;
   margin-bottom: .5em;
   list-style-type: none;
   background-color: rgba(0, 0, 0, .08);
-  padding-left:0;
 }
 div.latest-news a {
   text-decoration: none;
 }
-.fixed-bottom {
-  position: fixed;
-  bottom: 0;
+.updates {
+  display: inline-block;
+  width: 80%;
+}
+.headline {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, .8);
+  vertical-align: top;
+  -webkit-transform: rotate(90deg);
+  -moz-transform:    rotate(90deg);
+  transform:         rotate(90deg);
+}
+.headline h1 {
+  font-size: 1em;
 }
 
 /* end header */
@@ -85,4 +99,12 @@ div.latest-news a {
 #page-wrapper > div {
   margin-right: 10%;
   margin-left: 10%;
+}
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+}
+.fixed-top {
+  position: fixed;
+  bottom: 0;
 }
