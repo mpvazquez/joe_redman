@@ -10,7 +10,6 @@ header {
 /* start nav bar */
 
 nav {
-  display: inline-block;
   background-color: white;
   width: 100%;
   -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
@@ -28,7 +27,7 @@ nav a {
 }
 nav ul {
   display: inline-block;
-  width: 65%;
+  width: 60%;
   text-align: right;
   padding-right: 10%;
   margin: .5em 0;
@@ -37,34 +36,35 @@ nav h1 {
   display: inline;
   font-size: 1.5em;
   padding-left: 10%;
+  text-transform: uppercase;
 }
 
 /* end nav bar */
 
-/* start hero image and latest news */
-
+/* start main 'Joe Redman' headline that fades out */
 div.headline {
-  height: 40em;
+  height: 100%;
   background-color: #939EA8;
 }
 div.headline h1 {
   font-family: Archivo Narrow;
   font-size: 10em;
-  color: rgba(255,255,255,.2);
-  margin: 0 auto;
+  color: rgba(255,255,255,.8);
+  margin: 0;
+  padding-top: 15%;
   text-align: center;
-  top: 50%;
 }
+
+/* start hero image and latest news */
 
 div.hero {
   position: relative;
   background-image: url(../images/joe-wall2.jpg);
-  background-position: 0 -17em;
+  background-position: 0 -13em;
   background-size: cover;
   height: 40em;
 }
 div.latest-news {
-  display: none;
   position: absolute;
   padding: 1.5em;
   top: 10%;
@@ -94,17 +94,20 @@ div.latest-news a {
   width: 80%;
 }
 .joe-redman {
-  position: relative;
-  width: 18%;
+  position: absolute;
   display: inline-block;
-  /*background-color: rgba(255, 255, 255, .8);*/
-  vertical-align: top;
   -webkit-transform: rotate(90deg);
   -moz-transform:    rotate(90deg);
   transform:         rotate(90deg);
+  top: 34%;
+  left: 32%;
 }
 .joe-redman h1 {
-  font-size: 1em;
+  color: rgba(0, 0, 0, .4);
+  font-size: 3.5em;
+  letter-spacing: .1em;
+  white-space: nowrap;
+  text-transform: uppercase;
 }
 
 /* end header */
