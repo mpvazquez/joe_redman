@@ -122,5 +122,5 @@ div.latest-news a {
 }
 .fixed-top {
   position: fixed;
-  bottom: 0;
+  top: 0;
 }
