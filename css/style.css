@@ -43,15 +43,28 @@ nav h1 {
 
 /* start hero image and latest news */
 
+div.headline {
+  height: 40em;
+  background-color: #939EA8;
+}
+div.headline h1 {
+  font-family: Archivo Narrow;
+  font-size: 10em;
+  color: rgba(255,255,255,.2);
+  margin: 0 auto;
+  text-align: center;
+  top: 50%;
+}
+
 div.hero {
   position: relative;
   background-image: url(../images/joe-wall2.jpg);
   background-position: 0 -17em;
   background-size: cover;
   height: 40em;
-  /*width: 120%;*/
 }
 div.latest-news {
+  display: none;
   position: absolute;
   padding: 1.5em;
   top: 10%;
@@ -80,17 +93,17 @@ div.latest-news a {
   display: inline-block;
   width: 80%;
 }
-.headline {
+.joe-redman {
   position: relative;
   width: 18%;
   display: inline-block;
-  background-color: rgba(255, 255, 255, .8);
+  /*background-color: rgba(255, 255, 255, .8);*/
   vertical-align: top;
   -webkit-transform: rotate(90deg);
   -moz-transform:    rotate(90deg);
   transform:         rotate(90deg);
 }
-.headline h1 {
+.joe-redman h1 {
   font-size: 1em;
 }
 
