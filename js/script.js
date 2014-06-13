@@ -1,7 +1,8 @@
 $(document).ready(function() {
-  var $latestNews = $(".latest-news");
-  clearHero = $('.hero').outerHeight();
-  console.log($(window).scrollTop());
+  var $latestNews = $('.latest-news');
+  var $nav = $('nav');
+  var $clearHero = $('.hero').outerHeight();
+  var $window = $(window);
 
   $latestNews.hide();
 
@@ -10,20 +11,17 @@ $(document).ready(function() {
     $latestNews.fadeIn(5000);
   }, 500);
 
-  $(window).scroll(function() {
-    console.log($(window).scrollTop());
-    if ( $(window).scrollTop() == 0) {
-      console.log('first')
-      $('nav').removeClass('fixed-top').next();
-      $('nav').addClass('fixed-bottom').next();
-    } else if ( ($(window).scrollTop() - clearHero) < 0 ) {
-      console.log("riding the hero");
-      $('nav').removeClass('fixed-bottom').next();
-      $('nav').removeClass('fixed-top').next();
+  $window.scroll(function() {
+    if ( $window.scrollTop() <= 0) {
+      $nav.removeClass('fixed-top').next();
+      $nav.addClass('fixed-bottom').next();
+      $latestNews.fadeIn(1000);      
+    } else if ( ($window.scrollTop() - $clearHero) < 0 ) {
+      $nav.removeClass('fixed-bottom').next();
+      $nav.removeClass('fixed-top').next();
+      $latestNews.fadeOut(1000);
     } else {
-      console.log("fixed-top")
-      $('nav').addClass('fixed-top').next();
+      $nav.addClass('fixed-top').next();
     } 
   });
-
 });

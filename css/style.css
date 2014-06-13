@@ -59,9 +59,11 @@ div.headline h1 {
 
 div.hero {
   position: relative;
-  background-image: url(../images/joe-wall2.jpg);
-  background-position: 0 -13em;
-  background-size: cover;
+  background-image: url(../images/joe-wall.jpg);
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-position: left;
+  background-size: 85em auto;
   height: 40em;
 }
 div.latest-news {
@@ -134,12 +136,12 @@ div.latest-news a {
 }
 #carousel ul,  
 #carousel li{  
-    padding: 0;  
-    list-style: none;  
-    list-style-type: none;  
+  padding: 0;  
+  list-style: none;  
+  list-style-type: none;  
 }
 #carousel ul {
-  position: relative;
+  /*position: relative;*/
   width: 100%;
   margin: 0;
 }
