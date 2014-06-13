@@ -12,9 +12,9 @@ header {
 nav {
   background-color: white;
   width: 100%;
-  -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow:    0px 5px 5px 0px rgba(50, 50, 50, 0.75);
-  box-shadow:         0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 2px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 2px 5px 0px rgba(50, 50, 50, 0.75);
 }
 nav li {
   display: inline-block;
@@ -123,4 +123,29 @@ div.latest-news a {
 .fixed-top {
   position: fixed;
   top: 0;
+}
+
+/* image carousel */
+#carousel {
+  overflow: auto;
+  background-color: rgba(0, 0, 0, .08);
+  height: 20em;
+  margin: 0 auto;
+}
+#carousel ul,  
+#carousel li{  
+    padding: 0;  
+    list-style: none;  
+    list-style-type: none;  
+}
+#carousel ul {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+
+/* footer */
+
+footer {
+  height: 5em;
 }
