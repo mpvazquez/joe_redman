@@ -135,13 +135,13 @@ div.latest-news a {
   margin: 0 auto;
 }
 #carousel ul,  
-#carousel li{  
+#carousel li {  
   padding: 0;  
   list-style: none;  
-  list-style-type: none;  
+  list-style-type: none;
+  display: inline-block;
 }
 #carousel ul {
-  /*position: relative;*/
   width: 100%;
   margin: 0;
 }

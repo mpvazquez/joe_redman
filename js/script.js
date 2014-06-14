@@ -1,12 +1,11 @@
-var photoView = function(number){
-  this.imageNumber = number;
-  this.el = undefined;
+var PhotosView = function(imageName){
+  this.imageName = imageName;
+  this.el = $("<li>");
 }
-photoView.prototype.render = function() {
-  $.each(imagesList['image-thumbnails'], function(i, image) {
-    var renderedImage = new photoView(i + 1);
-    renderedImage.el = $("<img>").attr("src", "images/thumbnails/" + image);
-  });
+PhotosView.prototype.render = function(){
+  $("<img>").attr("src", "images/thumbnails/" + this.imageName)
+    .appendTo(this.el);
+  $('#photo-carousel').append(this.el);
 }
 
 $(document).ready(function() {
@@ -34,5 +33,10 @@ $(document).ready(function() {
     } else {
       $nav.addClass('fixed-top').next();
     } 
+  });
+
+  $.each(imagesList['image-thumbnails'], function(i, image) {
+    var newView = new PhotosView(image);
+    newView.render();
   });
 });
