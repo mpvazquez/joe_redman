@@ -1,15 +1,20 @@
+var imageArray = [];
+
 // photos view constructor function and renders on the page
 var PhotosView = function(imageName){
   this.imageName = imageName;
-  this.el = $("<li>");
+  this.el = $("<li>").attr("id", this.imageName);
 }
 PhotosView.prototype.render = function(){
   $("<img>").attr("src", "images/thumbnails/" + this.imageName)
     .appendTo(this.el);
   $('#photo-carousel').append(this.el);
+  imageArray.push(this.el);
 }
 
 $(document).ready(function() {
+  var $imageEls = $('#photo-carousel > li');
+  console.log($imageEls);
   var $clearHero = $('.hero').outerHeight();
   var $window = $(window);
   var $nav = $('nav');

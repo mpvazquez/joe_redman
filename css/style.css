@@ -125,6 +125,9 @@ div.joe-redman h1 {
   position: fixed;
   top: 0;
 }
+.hidden {
+  display: none;
+}
 
 /* image carousel */
 #carousel {
