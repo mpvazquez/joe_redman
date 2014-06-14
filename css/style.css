@@ -113,7 +113,7 @@ div.joe-redman h1 {
 
 /* end header */
 
-#page-wrapper > div {
+#page-wrapper > section {
   margin-right: 10%;
   margin-left: 10%;
 }
