@@ -20,10 +20,6 @@ nav li {
   font-size: 1.5em;
   padding-left: 3em;
 }
-nav a {
-  text-decoration: none;
-  color: grey;
-}
 nav ul {
   display: inline-block;
   width: 60%;
@@ -31,11 +27,27 @@ nav ul {
   padding-right: 10%;
   margin: .5em 0;
 }
+nav ul a {
+  text-decoration: none;
+  color: grey;
+}
+nav h1 a {
+  text-decoration: none;
+  color: black;
+}
 nav h1 {
   display: inline;
   font-size: 1.5em;
   padding-left: 10%;
   text-transform: uppercase;
+}
+#photo-carousel li {
+  width: 30%;
+  height: 20em;
+  overflow: hidden;
+}
+#photo-carousel img {
+  width: 100%;
 }
 
 /* end nav bar */
@@ -134,21 +146,14 @@ div.joe-redman h1 {
   overflow: auto;
   background-color: rgba(0, 0, 0, .08);
   height: 20em;
-  margin: 0 auto;
 }
 #carousel ul,  
 #carousel li {  
-  padding: 0;  
+  padding: 0;
   list-style: none;  
   list-style-type: none;
   display: inline-block;
-}
-#carousel ul {
-  width: 100%;
   margin: 0;
-}
-#carousel img {
-  width: 100%;
 }
 
 /* footer */

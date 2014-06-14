@@ -1,4 +1,12 @@
-var imageArray = [];
+var PhotosCollection = function(){
+  this.models = [];
+}
+PhotosCollection.prototype.carousel = function() {
+  var photosCount = this.models.length;
+  
+}
+
+var newPhotosCollection = new PhotosCollection();
 
 // photos view constructor function and renders on the page
 var PhotosView = function(imageName){
@@ -9,12 +17,12 @@ PhotosView.prototype.render = function(){
   $("<img>").attr("src", "images/thumbnails/" + this.imageName)
     .appendTo(this.el);
   $('#photo-carousel').append(this.el);
-  imageArray.push(this.el);
+  newPhotosCollection.models.push(this);
+  return this;
 }
 
 $(document).ready(function() {
   var $imageEls = $('#photo-carousel > li');
-  console.log($imageEls);
   var $clearHero = $('.hero').outerHeight();
   var $window = $(window);
   var $nav = $('nav');
@@ -31,7 +39,7 @@ $(document).ready(function() {
     if ( $window.scrollTop() <= 0) {
       $nav.removeClass('fixed-top').next();
       $nav.addClass('fixed-bottom').next();
-      // $latestNews.fadeIn(2000);      
+      // $latestNews.fadeIn(2000);    
     } else if ( ($window.scrollTop() - $clearHero) < 0 ) {
       $nav.removeClass('fixed-bottom').next();
       $nav.removeClass('fixed-top').next();
@@ -42,7 +50,8 @@ $(document).ready(function() {
   });
 
   $.each(imagesList['image-thumbnails'], function(i, image) {
-    var newView = new PhotosView(image);
-    newView.render();
+    new PhotosView(image).render();
   });
+
+  newPhotosCollection.carousel();
 });
