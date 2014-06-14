@@ -25,10 +25,5 @@ $(document).ready(function() {
     } 
   });
 
-  $.ajax({
-    url: "data/images.json",
-    success: function(data) {
-      console.log(data);
-    }
-  });
+  console.log(imagesList);
 });
