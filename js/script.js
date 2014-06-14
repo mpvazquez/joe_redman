@@ -15,13 +15,20 @@ $(document).ready(function() {
     if ( $window.scrollTop() <= 0) {
       $nav.removeClass('fixed-top').next();
       $nav.addClass('fixed-bottom').next();
-      $latestNews.fadeIn(1000);      
+      // $latestNews.fadeIn(2000);      
     } else if ( ($window.scrollTop() - $clearHero) < 0 ) {
       $nav.removeClass('fixed-bottom').next();
       $nav.removeClass('fixed-top').next();
-      $latestNews.fadeOut(1000);
+      // $latestNews.fadeOut(1000);
     } else {
       $nav.addClass('fixed-top').next();
     } 
+  });
+
+  $.ajax({
+    url: "data/images.json",
+    success: function(data) {
+      console.log(data);
+    }
   });
 });
