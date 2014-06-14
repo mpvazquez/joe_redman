@@ -1,8 +1,19 @@
+var photoView = function(number){
+  this.imageNumber = number;
+  this.el = undefined;
+}
+photoView.prototype.render = function() {
+  $.each(imagesList['image-thumbnails'], function(i, image) {
+    var renderedImage = new photoView(i + 1);
+    renderedImage.el = $("<img>").attr("src", "images/thumbnails/" + image);
+  });
+}
+
 $(document).ready(function() {
-  var $latestNews = $('.latest-news');
-  var $nav = $('nav');
   var $clearHero = $('.hero').outerHeight();
+  var $latestNews = $('.latest-news');
   var $window = $(window);
+  var $nav = $('nav');
 
   $latestNews.hide();
 
@@ -24,6 +35,4 @@ $(document).ready(function() {
       $nav.addClass('fixed-top').next();
     } 
   });
-
-  console.log(imagesList);
 });
