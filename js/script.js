@@ -1,7 +1,4 @@
-var $clearHero = $('.hero').outerHeight();
-var $window = $(window);
-var $nav = $('nav');
-
+// photos view constructor function and renders on the page
 var PhotosView = function(imageName){
   this.imageName = imageName;
   this.el = $("<li>");
@@ -13,7 +10,11 @@ PhotosView.prototype.render = function(){
 }
 
 $(document).ready(function() {
+  var $clearHero = $('.hero').outerHeight();
+  var $window = $(window);
+  var $nav = $('nav');
   var $latestNews = $('.latest-news');
+
   $latestNews.hide();
 
   setTimeout(function() {

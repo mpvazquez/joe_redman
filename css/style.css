@@ -144,6 +144,9 @@ div.joe-redman h1 {
   width: 100%;
   margin: 0;
 }
+#carousel img {
+  width: 100%;
+}
 
 /* footer */
 footer {
