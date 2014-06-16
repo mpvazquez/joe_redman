@@ -5,12 +5,12 @@ var PhotosCollection = function(){
 }
 // renders photo collection carousel on page
 PhotosCollection.prototype.renderCarousel = function() {
-  for(var i = 0; i < this.photosCount(); i ++) {
-    if(i === this.prevPosition()) {
+  for(var i = 0; i < this.photosCount(); i++) {
+    if(i === this.prevPhotoPosition()) {
       $(this.models[i].el).removeClass("hidden");
     } else if (i === this.startPosition) {
       $(this.models[i].el).removeClass("hidden");
-    } else if (i === this.nextPosition()) {
+    } else if (i === this.nextPhotoPosition()) {
       $(this.models[i].el).removeClass("hidden");
     }
   }
@@ -21,30 +21,40 @@ PhotosCollection.prototype.photosCount = function() {
   return this.models.length;
 }
 // returns value of next photo in collection
-PhotosCollection.prototype.nextPosition = function() {
+PhotosCollection.prototype.nextPhotoPosition = function() {
   if(this.photosCount() - 1 === this.startPosition) {
     return 0;
   }
   return this.startPosition + 1;
 }
 // returns value of previos photo in collection
-PhotosCollection.prototype.prevPosition = function() {
+PhotosCollection.prototype.prevPhotoPosition = function() {
+  if(this.startPosition === 0) {
+    return this.photosCount() - 1;
+  }
   return this.startPosition - 1;
 }
 // lets user select next photo in collection
-PhotosCollection.prototype.nextPhoto = function() {
-  if(this.photosCount() - 1 < this.startPosition) {
+PhotosCollection.prototype.moveForward = function() {
+  if(this.photosCount() - 1 === this.startPosition) {
+    $(this.models[this.photosCount() - 2].el).addClass("hidden");
     this.startPosition = 0;
+  } else {  
+    $(this.models[this.prevPhotoPosition()].el).addClass("hidden");
+    this.startPosition++;
   }
-  $(this.models[this.prevPosition()].el).addClass("hidden");
-  this.startPosition++;
   this.renderCarousel();
   return this;
 }
 // lets user select previous photo oin collection
-PhotosCollection.prototype.prevPhoto = function() {
-  $(this.models[this.startPosition - 1].el).addClass("hidden");
-  this.startPosition--;
+PhotosCollection.prototype.moveBackward = function() {
+  if(this.startPosition === 0) {
+    $(this.models[this.nextPhotoPosition()].el).addClass("hidden");
+    this.startPosition = this.photosCount() - 1;
+  } else {  
+    $(this.models[this.nextPhotoPosition()].el).addClass("hidden");
+    this.startPosition--;
+  }
   this.renderCarousel();
   return this;
 }
