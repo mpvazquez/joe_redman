@@ -1,17 +1,40 @@
+// collection of photos and carousel that 
 var PhotosCollection = function(){
   this.models = [];
+  this.previousPosition = 0;
+  this.startPosition = 1;
+  this.nextPosition = 2;
 }
-PhotosCollection.prototype.carousel = function() {
+PhotosCollection.prototype.renderCarousel = function() {
   var photosCount = this.models.length;
-  
+
+  for(var i = 0; i <= photosCount; i ++) {
+    if(i === this.previousPosition) {
+      $(this.models[i].el).removeClass("hidden");
+    } else if (i === this.startPosition) {
+      $(this.models[i].el).removeClass("hidden");
+    } else if (i === this.nextPosition) {
+      $(this.models[i].el).removeClass("hidden");
+    }
+  }
+}
+PhotosCollection.prototype.carouselNext = function() {
+  $(this.models[this.previousPosition].el).addClass("hidden");
+  this.previousPosition++;
+  this.startPosition++;
+  this.nextPosition++;
+  this.renderCarousel();
+}
+PhotosCollection.prototype.carouselPrev = function() {
+
 }
 
 var newPhotosCollection = new PhotosCollection();
 
-// photos view constructor function and renders on the page
+// photos view constructor function and prototype renders them
 var PhotosView = function(imageName){
   this.imageName = imageName;
-  this.el = $("<li>").attr("id", this.imageName);
+  this.el = $("<li>").addClass("hidden");
 }
 PhotosView.prototype.render = function(){
   $("<img>").attr("src", "images/thumbnails/" + this.imageName)
@@ -53,5 +76,5 @@ $(document).ready(function() {
     new PhotosView(image).render();
   });
 
-  newPhotosCollection.carousel();
+  newPhotosCollection.renderCarousel();
 });

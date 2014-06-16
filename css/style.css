@@ -125,6 +125,21 @@ div.joe-redman h1 {
 
 /* end header */
 
+/* image carousel */
+#carousel {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, .08);
+  height: 20em;
+}
+#carousel ul,  
+#carousel li {  
+  padding: 0;
+  list-style: none;  
+  list-style-type: none;
+  display: inline-block;
+  margin: 0;
+}
+
 #page-wrapper > section {
   margin-right: 10%;
   margin-left: 10%;
@@ -138,22 +153,7 @@ div.joe-redman h1 {
   top: 0;
 }
 .hidden {
-  display: none;
-}
-
-/* image carousel */
-#carousel {
-  overflow: auto;
-  background-color: rgba(0, 0, 0, .08);
-  height: 20em;
-}
-#carousel ul,  
-#carousel li {  
-  padding: 0;
-  list-style: none;  
-  list-style-type: none;
-  display: inline-block;
-  margin: 0;
+  display: none !important;
 }
 
 /* footer */
