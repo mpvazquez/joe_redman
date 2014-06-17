@@ -7,11 +7,14 @@ var PhotosCollection = function(){
 PhotosCollection.prototype.renderCarousel = function() {
   for(var i = 0; i < this.photosCount(); i++) {
     if(i === this.prevPhotoPosition()) {
-      $(this.models[i].el).removeClass("hidden");
+      $(this.models[i].el).removeClass("back-position")
+      .addClass("left-position");
     } else if (i === this.startPosition) {
-      $(this.models[i].el).removeClass("hidden");
+      $(this.models[i].el).removeClass("back-position")
+      .addClass("center-position");
     } else if (i === this.nextPhotoPosition()) {
-      $(this.models[i].el).removeClass("hidden");
+      $(this.models[i].el).removeClass("back-position")
+      .addClass("right-position");
     }
   }
   return this;
@@ -37,10 +40,10 @@ PhotosCollection.prototype.prevPhotoPosition = function() {
 // lets user select next photo in collection
 PhotosCollection.prototype.moveForward = function() {
   if(this.photosCount() - 1 === this.startPosition) {
-    $(this.models[this.photosCount() - 2].el).addClass("hidden");
+    $(this.models[this.photosCount() - 2].el).addClass("back-position");
     this.startPosition = 0;
   } else {  
-    $(this.models[this.prevPhotoPosition()].el).addClass("hidden");
+    $(this.models[this.prevPhotoPosition()].el).addClass("back-position");
     this.startPosition++;
   }
   this.renderCarousel();
@@ -49,10 +52,10 @@ PhotosCollection.prototype.moveForward = function() {
 // lets user select previous photo oin collection
 PhotosCollection.prototype.moveBackward = function() {
   if(this.startPosition === 0) {
-    $(this.models[this.nextPhotoPosition()].el).addClass("hidden");
+    $(this.models[this.nextPhotoPosition()].el).addClass("back-position");
     this.startPosition = this.photosCount() - 1;
   } else {  
-    $(this.models[this.nextPhotoPosition()].el).addClass("hidden");
+    $(this.models[this.nextPhotoPosition()].el).addClass("back-position");
     this.startPosition--;
   }
   this.renderCarousel();
@@ -64,7 +67,7 @@ var newPhotosCollection = new PhotosCollection();
 // photos view constructor function and prototype renders them
 var PhotosView = function(imageName){
   this.imageName = imageName;
-  this.el = $("<li>").addClass("hidden");
+  this.el = $("<li>").addClass("back-position");
 }
 PhotosView.prototype.render = function(){
   $("<img>").attr("src", "images/thumbnails/" + this.imageName)
@@ -74,8 +77,8 @@ PhotosView.prototype.render = function(){
   return this;
 }
 
+// script below this function will run once the DOM loads
 $(document).ready(function() {
-  var $imageEls = $('#photo-carousel > li');
   var $clearHero = $('.hero').outerHeight();
   var $window = $(window);
   var $nav = $('nav');

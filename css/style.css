@@ -41,14 +41,6 @@ nav h1 {
   padding-left: 10%;
   text-transform: uppercase;
 }
-#photo-carousel li {
-  width: 30%;
-  height: 20em;
-  overflow: hidden;
-}
-#photo-carousel img {
-  width: 100%;
-}
 
 /* end nav bar */
 
@@ -133,16 +125,51 @@ div.joe-redman h1 {
 }
 #carousel ul,  
 #carousel li {  
-  padding: 0;
-  list-style: none;  
+  list-style: none;
   list-style-type: none;
+}
+#carousel ul {
+  position: relative;
+}
+#carousel li {
+  position: absolute;
   display: inline-block;
-  margin: 0;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+#photo-carousel li {
+  vertical-align: middle;
+  width: 30%;
+  height: 18em;
+  overflow: hidden;
+}
+#photo-carousel img {
+  width: 100%;
+}
+#carousel .left-position {
+  left: 2.5%;
+}
+#carousel .center-position {
+  left: 35%;
+}
+#carousel .right-position {
+  right: 2.5%;
+}
+#carousel .back-position {
+  top: -30em;
+  left: 35em;
+  z-index: -100;
+  -webkit-transform: scale(.5);
+  -moz-transform: scale(.5);
+  transform: scale(.5);
 }
 
+/* page wrapper and other class methods */
 #page-wrapper > section {
   margin-right: 10%;
   margin-left: 10%;
+  text-align: justify;
 }
 .fixed-bottom {
   position: fixed;
@@ -151,9 +178,6 @@ div.joe-redman h1 {
 .fixed-top {
   position: fixed;
   top: 0;
-}
-.hidden {
-  display: none !important;
 }
 
 /* footer */
