@@ -7,13 +7,13 @@ var PhotosCollection = function(){
 PhotosCollection.prototype.renderCarousel = function() {
   for(var i = 0; i < this.photosCount(); i++) {
     if(i === this.prevPhotoPosition()) {
-      $(this.models[i].el).removeClass("back-position")
+      $(this.models[i].el).removeClass()
       .addClass("left-position");
     } else if (i === this.startPosition) {
-      $(this.models[i].el).removeClass("back-position")
+      $(this.models[i].el).removeClass()
       .addClass("center-position");
     } else if (i === this.nextPhotoPosition()) {
-      $(this.models[i].el).removeClass("back-position")
+      $(this.models[i].el).removeClass()
       .addClass("right-position");
     }
   }
