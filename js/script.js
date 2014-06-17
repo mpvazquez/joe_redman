@@ -25,7 +25,7 @@ PhotosCollection.prototype.photosCount = function() {
 }
 // returns value of next photo in collection
 PhotosCollection.prototype.nextPhotoPosition = function() {
-  if(this.photosCount() - 1 === this.startPosition) {
+  if(this.startPosition === this.photosCount() - 1) {
     return 0;
   }
   return this.startPosition + 1;
@@ -40,10 +40,12 @@ PhotosCollection.prototype.prevPhotoPosition = function() {
 // lets user select next photo in collection
 PhotosCollection.prototype.moveForward = function() {
   if(this.photosCount() - 1 === this.startPosition) {
-    $(this.models[this.photosCount() - 2].el).addClass("back-position");
+    $(this.models[this.photosCount() - 2].el)
+      .addClass("back-position");
     this.startPosition = 0;
   } else {  
-    $(this.models[this.prevPhotoPosition()].el).addClass("back-position");
+    $(this.models[this.prevPhotoPosition()].el)
+      .addClass("back-position");
     this.startPosition++;
   }
   this.renderCarousel();
