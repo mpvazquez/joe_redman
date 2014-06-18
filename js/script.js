@@ -114,7 +114,7 @@ $(document).ready(function() {
       $nav.removeClass('fixed-top').next();
       $nav.addClass('fixed-bottom').next();
       // $latestNews.fadeIn(2000);    
-    } else if ($window.scrollTop() < $clearViewport + $nav.height()) {
+    } else if ($window.scrollTop() < $clearViewport) {
       $nav.removeClass().next();
       // $latestNews.fadeOut(1000);
     } else {
@@ -135,7 +135,7 @@ $(document).ready(function() {
       console.log(target)
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top - 60
+          scrollTop: target.offset().top - 50
         }, "slow");
         return false;
       }
