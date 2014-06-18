@@ -1,10 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Archivo+Narrow);
 @import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(http://fonts.googleapis.com/css?family=Quicksand);
 
 /* website header */
 header {
   top: 0px;
-  font-family: Roboto;
+  font-family: Quicksand;
 }
 
 /* start nav bar */
@@ -20,7 +21,7 @@ nav {
 nav li {
   display: inline-block;
   font-size: 1.5em;
-  padding-left: 3em;
+  padding-left: 2.5em;
 }
 nav ul {
   display: inline-block;
@@ -69,7 +70,7 @@ div.hero {
   background-attachment: fixed;
   background-position: left;
   background-size: 85em auto;
-  height: 45em;
+  height: 43em;
 }
 div.latest-news {
   position: absolute;
@@ -88,17 +89,22 @@ div.latest-news ul {
   padding-left:0;
 }
 div.latest-news ol {
-  padding-left:0;
-  margin-bottom: .5em;
-  list-style-type: none;
-  background-color: rgba(0, 0, 0, .08);
+  font-family: Roboto;
+  padding-left: 1em;
+  margin-bottom: 1.5em;
+  list-style-type: square;
+  /*background-color: rgba(135, 206, 250, .25);*/
+}
+div.latest-news p {
+  font-family: Roboto;
+  background-color: rgba(135, 206, 250, .25);
 }
 div.latest-news a {
   text-decoration: none;
 }
 div.latest-news .updates {
   display: inline-block;
-  width: 80%;
+  width: 100%;
 }
 div.latest-news .joe-redman {
   position: absolute;
@@ -122,7 +128,7 @@ div.latest-news .joe-redman h1 {
 /* image carousel */
 #carousel {
   overflow: hidden;
-  background-color: rgba(0, 0, 0, .08);
+  /*background-color: rgba(0, 0, 0, .08);*/
   height: 30em;
   position: relative;
 }
