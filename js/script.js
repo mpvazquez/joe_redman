@@ -100,7 +100,7 @@ $(document).ready(function() {
   var $latestNews = $('.latest-news');
 
   $latestNews.hide();
-  $nav.addClass("fixed-bottom");
+  $nav.addClass("fixed-bottom").next();
 
   setTimeout(function() {
     $(".headline").fadeOut(3500);
