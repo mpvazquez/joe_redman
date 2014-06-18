@@ -94,10 +94,12 @@ PhotosView.prototype.render = function(){
 
 // script below this function will run once the DOM loads
 $(document).ready(function() {
-  var $clearHero = $('.hero').outerHeight();
-  var $window = $(window);
   var $nav = $('nav');
+  var $window = $(window);
   var $latestNews = $('.latest-news');
+  var $clearViewport = $window.outerHeight();
+  console.log($clearViewport);
+  console.log($nav.height());
 
   $latestNews.hide();
   $nav.addClass("fixed-bottom").next();
@@ -112,9 +114,8 @@ $(document).ready(function() {
       $nav.removeClass('fixed-top').next();
       $nav.addClass('fixed-bottom').next();
       // $latestNews.fadeIn(2000);    
-    } else if ( ($window.scrollTop() - $clearHero) < 0 ) {
-      $nav.removeClass('fixed-bottom').next();
-      $nav.removeClass('fixed-top').next();
+    } else if ($window.scrollTop() < $clearViewport + $nav.height()) {
+      $nav.removeClass().next();
       // $latestNews.fadeOut(1000);
     } else {
       $nav.addClass('fixed-top').next();
@@ -134,7 +135,7 @@ $(document).ready(function() {
       console.log(target)
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top - 20
+          scrollTop: target.offset().top - 60
         }, "slow");
         return false;
       }

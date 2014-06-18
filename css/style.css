@@ -70,12 +70,12 @@ div.hero {
   background-attachment: fixed;
   background-position: left;
   background-size: 85em auto;
-  height: 43em;
+  height: 42em;
 }
 div.latest-news {
   position: absolute;
   padding: 1.5em;
-  top: 10%;
+  top: 15%;
   left: 10%;
   max-width: 20em;
   text-align: justify;
@@ -110,7 +110,7 @@ div.latest-news .updates {
 }
 div.latest-news .joe-redman {
   position: absolute;
-  bottom: -12.5em;
+  bottom: -10em;
   right: -49.5em;
 }
 div.latest-news .joe-redman h1 {
