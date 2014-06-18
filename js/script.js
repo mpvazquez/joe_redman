@@ -1,3 +1,6 @@
+var arrowRight =  $("#arrow-right");
+var arrowLeft = document.getElementById("arrow-left");
+
 // collection of photos and image models
 var PhotosCollection = function(){
   this.models = [];
@@ -21,7 +24,7 @@ PhotosCollection.prototype.renderCarousel = function() {
   $(".left-position").on("click", function() {
     newPhotosCollection.moveBackward();
   });
-  
+
   $(".right-position").on("click", function() {
     newPhotosCollection.moveForward();
   });
@@ -97,6 +100,7 @@ $(document).ready(function() {
   var $latestNews = $('.latest-news');
 
   $latestNews.hide();
+  $nav.addClass("fixed-bottom");
 
   setTimeout(function() {
     $(".headline").fadeOut(3500);

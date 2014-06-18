@@ -68,7 +68,7 @@ div.hero {
   background-attachment: fixed;
   background-position: left;
   background-size: 85em auto;
-  height: 40em;
+  height: 42em;
 }
 div.latest-news {
   position: absolute;
@@ -122,7 +122,8 @@ div.latest-news .joe-redman h1 {
 #carousel {
   overflow: hidden;
   background-color: rgba(0, 0, 0, .08);
-  height: 25em;
+  height: 30em;
+  position: relative;
 }
 #carousel ul,  
 #carousel li {  
@@ -133,11 +134,13 @@ div.latest-news .joe-redman h1 {
   position: relative;
 }
 #carousel li {
+  top: 5em;
   width: 30%;
   height: 18em;
   overflow: hidden;
   position: absolute;
   display: inline-block;
+  background-size: cover;
   -webkit-transition: all .5s ease-in-out;
   -moz-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
@@ -146,33 +149,49 @@ div.latest-news .joe-redman h1 {
   width: 100%;
 }
 #carousel .left-position {
-  z-index: 100;
   left: 2.5%;
-  -webkit-transform: scale(.85);
-  -moz-transform: scale(.85);
-  transform: scale(.85);
+  z-index: 100;
+  opacity: .65;
+}
+#carousel .right-position {
+  left: 67.5%;
+  z-index: 100;
+  opacity: .65;
 }
 #carousel .center-position {
   z-index: 200;
   left: 35%;
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  transform: scale(1.2);
-}
-#carousel .right-position {
-  z-index: 100;
-  left: 67.5%;
-  -webkit-transform: scale(.85);
-  -moz-transform: scale(.85);
-  transform: scale(.85);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  transform: scale(1.5);
 }
 #carousel .back-position {
-  top: -30em;
-  left: 50em;
+  opacity: 0;
+  left: 35%;
   z-index: -100;
   -webkit-transform: scale(.3);
   -moz-transform: scale(.3);
   transform: scale(.3);
+}
+#video-carousel {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+/* carousel arrows */
+#arrow-left {
+  bottom: 0;
+  left: -1.5em;
+  position: absolute;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+#arrow-right {
+  bottom: 0;
+  right: -.7em;
+  position: absolute;
 }
 
 /* page wrapper and other class methods */
