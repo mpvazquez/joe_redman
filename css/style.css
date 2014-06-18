@@ -92,8 +92,10 @@ div.latest-news ol {
   font-family: Roboto;
   padding-left: 1em;
   margin-bottom: 1.5em;
+  list-style-type: none;
+}
+div.latest-news li:first-child {
   list-style-type: square;
-  /*background-color: rgba(135, 206, 250, .25);*/
 }
 div.latest-news p {
   font-family: Roboto;
@@ -128,7 +130,7 @@ div.latest-news .joe-redman h1 {
 /* image carousel */
 #carousel {
   overflow: hidden;
-  /*background-color: rgba(0, 0, 0, .08);*/
+  background-color: rgba(0, 0, 0, .015);
   height: 30em;
   position: relative;
 }
