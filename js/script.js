@@ -17,6 +17,14 @@ PhotosCollection.prototype.renderCarousel = function() {
       .addClass("right-position");
     }
   }
+
+  $(".left-position").on("click", function() {
+    newPhotosCollection.moveBackward();
+  });
+  
+  $(".right-position").on("click", function() {
+    newPhotosCollection.moveForward();
+  });
   return this;
 }
 // returns total count of photo models in collection
@@ -40,11 +48,11 @@ PhotosCollection.prototype.prevPhotoPosition = function() {
 // lets user select next photo in collection
 PhotosCollection.prototype.moveForward = function() {
   if(this.photosCount() - 1 === this.startPosition) {
-    $(this.models[this.photosCount() - 2].el)
+    $(this.models[this.photosCount() - 2].el).removeClass()
       .addClass("back-position");
     this.startPosition = 0;
   } else {  
-    $(this.models[this.prevPhotoPosition()].el)
+    $(this.models[this.prevPhotoPosition()].el).removeClass()
       .addClass("back-position");
     this.startPosition++;
   }
@@ -54,10 +62,12 @@ PhotosCollection.prototype.moveForward = function() {
 // lets user select previous photo oin collection
 PhotosCollection.prototype.moveBackward = function() {
   if(this.startPosition === 0) {
-    $(this.models[this.nextPhotoPosition()].el).addClass("back-position");
+    $(this.models[this.nextPhotoPosition()].el).removeClass()
+      .addClass("back-position");
     this.startPosition = this.photosCount() - 1;
   } else {  
-    $(this.models[this.nextPhotoPosition()].el).addClass("back-position");
+    $(this.models[this.nextPhotoPosition()].el).removeClass()
+      .addClass("back-position");
     this.startPosition--;
   }
   this.renderCarousel();
