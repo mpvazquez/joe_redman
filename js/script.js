@@ -1,4 +1,6 @@
-// collection of photos and image models
+//////////////////////////////////////////////////////
+// collection of photos, image element models to render
+// as an image carousel that can expand/shrink
 var PhotosCollection = function(){
   this.models = [];
   this.startPosition = 1;
@@ -8,13 +10,13 @@ PhotosCollection.prototype.renderCarousel = function() {
   for(var i = 0; i < this.photosCount(); i++) {
     if(i === this.prevPhotoPosition()) {
       $(this.models[i].el).removeClass()
-      .addClass("left-position");
+        .addClass("left-position");
     } else if (i === this.startPosition) {
       $(this.models[i].el).removeClass()
-      .addClass("center-position");
+        .addClass("center-position");
     } else if (i === this.nextPhotoPosition()) {
       $(this.models[i].el).removeClass()
-      .addClass("right-position");
+        .addClass("right-position");
     }
   }
   this.addEventHandlers();
@@ -28,19 +30,23 @@ PhotosCollection.prototype.photosCount = function() {
 PhotosCollection.prototype.nextPhotoPosition = function() {
   if(this.startPosition === this.photosCount() - 1) {
     return 0;
+  } else {
+    return this.startPosition + 1;
   }
-  return this.startPosition + 1;
 }
-// returns value of previos photo in collection
+// returns value of previous photo in collection
 PhotosCollection.prototype.prevPhotoPosition = function() {
   if(this.startPosition === 0) {
     return this.photosCount() - 1;
+  } else {
+    return this.startPosition - 1;
   }
-  return this.startPosition - 1;
 }
-// lets user select next photo in collection
+// lets user select next photo in collection 
 PhotosCollection.prototype.moveForward = function() {
+  //removes event handlers that were attached in current position
   this.removeEventHandlers();
+
   if(this.photosCount() - 1 === this.startPosition) {
     $(this.models[this.photosCount() - 2].el).removeClass()
       .addClass("back-position");
@@ -68,6 +74,7 @@ PhotosCollection.prototype.moveBackward = function() {
   this.renderCarousel();
   return this;
 }
+// adds event listeners so user can move carousel forward
 PhotosCollection.prototype.addEventHandlers = function() {
   $(".left-position").on("click", function() {
     newPhotosCollection.moveBackward();
@@ -76,13 +83,15 @@ PhotosCollection.prototype.addEventHandlers = function() {
     newPhotosCollection.moveForward();
   });
 }
+// removes event handlers -- called after an event is evoked
 PhotosCollection.prototype.removeEventHandlers = function() {
   $(".left-position").off("click");
   $(".right-position").off("click");
 }
-
+// new photo collection / start carousel
 var newPhotosCollection = new PhotosCollection();
 
+/////////////////////////////////////////////////////////////
 // photos view constructor function and prototype renders them
 var PhotosView = function(imageName){
   this.imageName = imageName;
@@ -96,6 +105,8 @@ PhotosView.prototype.render = function(){
   return this;
 }
 
+
+/////////////////////////////////////////////////////////
 // script below this function will run once the DOM loads
 $(document).ready(function() {
   var $nav = $('nav');
@@ -122,7 +133,7 @@ $(document).ready(function() {
       // $latestNews.fadeOut(1000);
     } else {
       $nav.addClass('fixed-top').next();
-    } 
+    }
   });
 
   $.each(imagesList['image-thumbnails'], function(i, image) {
@@ -143,8 +154,4 @@ $(document).ready(function() {
       }
     }
   });
-
-  if($scrolled === $('.videos').height()) {
-    $(".contact-hero").css("top", $scrolled * -2);
-  }
 });
