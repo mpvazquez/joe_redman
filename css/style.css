@@ -185,18 +185,23 @@ div.latest-news .joe-redman h1 {
 }
 
 /* carousel arrows */
+#arrow-left,
+#arrow-right {
+  position: absolute;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMTAwcHgiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMDAgMTAwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZD0iTTY2LjI1NCA0Ni45NDdMMzguOTE2IDE0LjE1MmMtMS4xMzEtMS4zNTktMy4xNTQtMS41NDMtNC41MTItMC40MDhjLTEuMzYxIDEuMTM3LTEuNTQ1IDMuMTUyLTAuNDEyIDQuNTEyTDU5LjYyMSA0OSBMMzMuOTkyIDc5Ljc0MmMtMS4xMzEgMS4zNjMtMC45NDcgMy40IDAuNCA0LjUxNGMxLjM1NyAxLjEgMy40IDEgNC41MTItMC40MDhsMjcuMzM4LTMyLjc5MyBDNjYuNzUyIDUwLjUgNjcgNDkuNyA2NyA0OUM2NyA0OC4zIDY2LjggNDcuNSA2Ni4zIDQ2Ljk0N3oiLz4KPC9zdmc+) no-repeat;
+  width: 7em;
+  height: 7em;
+}
+#arrow-right {
+  bottom: -14px;
+  right: -.7em;
+}
 #arrow-left {
   bottom: 0;
   left: -1.5em;
-  position: absolute;
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   transform: rotate(180deg);
-}
-#arrow-right {
-  bottom: 0;
-  right: -.7em;
-  position: absolute;
 }
 
 /* Contact section */
