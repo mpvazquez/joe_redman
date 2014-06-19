@@ -203,6 +203,12 @@ div.latest-news .joe-redman h1 {
   -moz-transform: rotate(180deg);
   transform: rotate(180deg);
 }
+#arrow-right:hover {
+  right: -.9em;
+}
+#arrow-left:hover {
+  left: -1.7em;
+}
 
 /* Contact section */
 
@@ -229,6 +235,10 @@ div.contact-info li {
   list-style: none;
   list-style-type: none;
 }
+
+/* contact logos */
+
+
 
 /* page wrapper and other class methods */
 .page-wrapper > section {

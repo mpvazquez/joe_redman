@@ -142,6 +142,13 @@ $(document).ready(function() {
 
   newPhotosCollection.renderCarousel();
 
+  $("#arrow-left").on("click", function() {
+    newPhotosCollection.moveBackward();
+  });
+  $("#arrow-right").on("click", function() {
+    newPhotosCollection.moveForward();
+  });
+
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
