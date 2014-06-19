@@ -12,7 +12,7 @@
   <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
-  <div id="page-wrapper">
+  <div class="page-wrapper">
     <a name="top"></a>
 
     <!-- start hero and nav -->
@@ -66,10 +66,9 @@
       <a name="about"></a>
       <h2>About Me</h2>
       <p>Welcome! It's so nice to see you! My name is Joe Redman, and I am a 2011 graduate from Ball State University where I studied Opera, Musical Theatre, and German. I'm originally from Chesterton, Indiana (right outside of Chicago) and Enid, Oklahoma (long story). Feel free to preuse my site, follow me on Twitter, Facebook, etc., and contact me if you want to know more! Huzzah!</p>
-      
     </section>
 
-    <section>
+    <section class="photos">
       <a name="photos"></a>
       <h2>Photos</h2>
       <div id="carousel">
@@ -84,7 +83,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="videos">
       <a name="videos"></a>
         <h2>Videos</h2>
         <div id="carousel">
@@ -93,16 +92,37 @@
           </ul>
         </div>
     </section>
+  </div>
 
-    <section>
+    <section class="contact">
       <a name="contact"></a>
       <h2>Contact</h2>
-      <a href="mailto:josephredman@gmail.com">josephredman@gmail.com</a>
+      <div class="contact-hero">
+        <div class="contact-info">
+          <ul>
+            <li>Email</li>
+            <li>Twitter</li>
+            <li>YouTube</li>
+            <li>Instagram</li>
+            <li>Phone</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
+  <div class="page-wrapper">
     <!-- start footer -->
-    <footer></footer>
-
+    <footer>
+      <ul>
+        <li><a href="#top">Top</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#photos">Photos</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="documents/joe-redman-resume.pdf" target="_blank">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#credits">Credits</a></li>
+      </ul>
+    </footer>
   </div>
 </body>
 </html>

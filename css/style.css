@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Archivo+Narrow);
-@import url(http://fonts.googleapis.com/css?family=Roboto);
 @import url(http://fonts.googleapis.com/css?family=Quicksand);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
 
 /* website header */
 header {
@@ -20,15 +20,15 @@ nav {
 }
 nav li {
   display: inline-block;
-  font-size: 1.5em;
   padding-left: 2.5em;
+  font-size: 1.5em;
 }
 nav ul {
   display: inline-block;
-  width: 60%;
-  text-align: right;
   padding-right: 10%;
+  text-align: right;
   margin: .5em 0;
+  width: 60%;
 }
 nav ul a {
   text-decoration: none;
@@ -53,54 +53,54 @@ div.headline {
   background-color: #939EA8;
 }
 div.headline h1 {
-  font-family: Archivo Narrow;
-  font-size: 10em;
   color: rgba(255,255,255,.8);
-  margin: 0;
-  padding-top: 15%;
+  font-family: Archivo Narrow;
   text-align: center;
+  padding-top: 15%;
+  font-size: 10em;
+  margin: 0;
 }
 
 /* start hero image and latest news */
 
 div.hero {
-  position: relative;
   background-image: url(../images/joe-redman-04.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: left;
   background-size: 85em auto;
+  background-position: left;
+  position: relative;
   height: 42em;
 }
 div.latest-news {
-  position: absolute;
-  padding: 1.5em;
-  top: 15%;
-  left: 10%;
-  max-width: 20em;
-  text-align: justify;
   background-color: rgba(255, 255, 255, .8);
+  text-align: justify;
+  position: absolute;
+  max-width: 20em;
+  padding: 1.5em;
+  left: 10%;
+  top: 15%;
 }
 div.latest-news h2 {
-  font-size: 3em;
   margin: 0 auto;
+  font-size: 3em;
   text-align: center;
 }
 div.latest-news ul {
   padding-left:0;
 }
 div.latest-news ol {
+  list-style-type: none;
+  margin-bottom: 1.5em;
   font-family: Roboto;
   padding-left: 1em;
-  margin-bottom: 1.5em;
-  list-style-type: none;
 }
 div.latest-news li:first-child {
   list-style-type: square;
 }
 div.latest-news p {
-  font-family: Roboto;
   background-color: rgba(135, 206, 250, .25);
+  font-family: Roboto;
 }
 div.latest-news a {
   text-decoration: none;
@@ -111,24 +111,24 @@ div.latest-news .updates {
 }
 div.latest-news .joe-redman {
   position: absolute;
-  bottom: -10em;
   right: -49.5em;
+  bottom: -10em;
 }
 div.latest-news .joe-redman h1 {
-  color: rgba(0, 0, 0, .4);
-  font-size: 3.5em;
-  white-space: nowrap;
   text-transform: uppercase;
+  color: rgba(0, 0, 0, .4);
+  white-space: nowrap;
+  font-size: 3.5em;
 }
 
 /* end header */
 
 /* image carousel */
 #carousel {
-  overflow: hidden;
   background-color: rgba(0, 0, 0, .015);
-  height: 30em;
   position: relative;
+  overflow: hidden;
+  height: 30em;
 }
 #carousel ul,  
 #carousel li {  
@@ -154,34 +154,34 @@ div.latest-news .joe-redman h1 {
   width: 100%;
 }
 #carousel .left-position {
-  left: 2.5%;
   z-index: 100;
   opacity: .65;
+  left: 2.5%;
 }
 #carousel .right-position {
-  left: 67.5%;
   z-index: 100;
   opacity: .65;
+  left: 67.5%;
 }
 #carousel .center-position {
-  z-index: 200;
   left: 35%;
+  z-index: 200;
   -webkit-transform: scale(1.5);
   -moz-transform: scale(1.5);
   transform: scale(1.5);
 }
 #carousel .back-position {
+  z-index: -100;
   opacity: 0;
   left: 35%;
-  z-index: -100;
   -webkit-transform: scale(.3);
   -moz-transform: scale(.3);
   transform: scale(.3);
 }
 #video-carousel {
+  text-align: center;
   margin: 0 auto;
   padding: 0;
-  text-align: center;
 }
 
 /* carousel arrows */
@@ -199,11 +199,37 @@ div.latest-news .joe-redman h1 {
   position: absolute;
 }
 
+/* Contact section */
+
+div.contact-hero {
+  background-image: url(../images/joe-redman-14.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  margin-right: 0;
+  height: 35em;
+  width: 100%;
+  z-index: 0;
+}
+div.contact-info {
+  top: 15%;
+  left: 10%;
+  z-index: 100;
+  position: absolute;
+  background-color: rgba(0, 0, 0, .015);
+}
+div.contact-info ul,
+div.contact-info li {
+  max-width: 20em;
+  list-style: none;
+  list-style-type: none;
+}
+
 /* page wrapper and other class methods */
-#page-wrapper > section {
+.page-wrapper > section {
+  text-align: justify;
   margin-right: 10%;
   margin-left: 10%;
-  text-align: justify;
 }
 .fixed-bottom {
   position: fixed;
@@ -213,8 +239,22 @@ div.latest-news .joe-redman h1 {
   position: fixed;
   top: 0;
 }
+.contact h2 {
+  margin-left: 10%;
+}
 
 /* footer */
 footer {
+  font-family: Quicksand;
+  text-align: center;
   height: 5em;
+}
+footer a {
+  color: gray;
+  text-decoration: none;
+}
+footer li {
+  padding: 1.5em;
+  display: inline-block;
+  margin: 0 auto;
 }

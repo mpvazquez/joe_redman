@@ -1,6 +1,3 @@
-var arrowRight =  $("#arrow-right");
-var arrowLeft = document.getElementById("arrow-left");
-
 // collection of photos and image models
 var PhotosCollection = function(){
   this.models = [];
@@ -96,10 +93,9 @@ PhotosView.prototype.render = function(){
 $(document).ready(function() {
   var $nav = $('nav');
   var $window = $(window);
+  var $scrolled = $window.scrollTop();
   var $latestNews = $('.latest-news');
   var $clearViewport = $window.outerHeight();
-  console.log($clearViewport);
-  console.log($nav.height());
 
   $latestNews.hide();
   $nav.addClass("fixed-bottom").next();
@@ -132,7 +128,6 @@ $(document).ready(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      console.log(target)
       if (target.length) {
         $('html,body').animate({
           scrollTop: target.offset().top - 50
@@ -141,4 +136,8 @@ $(document).ready(function() {
       }
     }
   });
+
+  if($scrolled === $('.videos').height()) {
+    $(".contact-hero").css("top", $scrolled * -2);
+  }
 });
