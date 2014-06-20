@@ -344,6 +344,9 @@ section.credits ul {
   list-style-type: none;
   text-transform: uppercase;
 }
+section.credits a {
+  color: black;
+}
 
 /* footer */
 footer {
