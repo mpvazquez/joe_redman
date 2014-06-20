@@ -92,7 +92,6 @@ PhotosCollection.prototype.setPermanentHandlers = function() {
   $("#arrow-left").on("click", function() {
     newPhotosCollection.moveBackward();
   });
-
   $("#arrow-right").on("click", function() {
     newPhotosCollection.moveForward();
   });
@@ -158,8 +157,7 @@ $(document).ready(function() {
     new PhotosView(image).render();
   });
 
-  newPhotosCollection.renderCarousel();
-  newPhotosCollection.setPermanentHandlers();
+  newPhotosCollection.renderCarousel().setPermanentHandlers();
 
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
