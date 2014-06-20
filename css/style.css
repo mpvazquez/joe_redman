@@ -231,14 +231,14 @@ div.contact-info ol {
   padding: 0;
   list-style: none;
   list-style-type: none;
+  font-family: Quicksand;
 }
 div.contact-info li {
-  display: inline-block;
   width: 7em;
+  display: inline-block;
   vertical-align: middle;
 }
 div.contact-info a {
-  font-size: 1.5em;
   text-decoration: none;
   color: black;
 }
@@ -247,9 +247,6 @@ div.contact-info a {
   padding-left: 7.2em;
   display: block;
   width: 13em;
-}
-#phone-link a {
-  font-size: 1em;
 }
 
 /* contact logos */
