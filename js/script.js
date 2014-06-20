@@ -88,6 +88,24 @@ PhotosCollection.prototype.removeEventHandlers = function() {
   $(".left-position").off("click");
   $(".right-position").off("click");
 }
+PhotosCollection.prototype.setPermanentHandlers = function() {
+  $("#arrow-left").on("click", function() {
+    newPhotosCollection.moveBackward();
+  });
+
+  $("#arrow-right").on("click", function() {
+    newPhotosCollection.moveForward();
+  });
+
+  $("body").on("keydown", function(event) {
+    console.log('pressed')
+    if(event.keyCode === 39) {
+      newPhotosCollection.moveForward();
+    } else if (event.keyCode === 37) {
+      newPhotosCollection.moveBackward();
+    }
+  });
+}
 // new photo collection / start carousel
 var newPhotosCollection = new PhotosCollection();
 
@@ -141,13 +159,7 @@ $(document).ready(function() {
   });
 
   newPhotosCollection.renderCarousel();
-
-  $("#arrow-left").on("click", function() {
-    newPhotosCollection.moveBackward();
-  });
-  $("#arrow-right").on("click", function() {
-    newPhotosCollection.moveForward();
-  });
+  newPhotosCollection.setPermanentHandlers();
 
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
