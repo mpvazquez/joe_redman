@@ -84,6 +84,7 @@ div.latest-news h2 {
   margin: 0 auto;
   font-size: 2.5em;
   text-align: center;
+  text-decoration: none;
 }
 div.latest-news ul {
   padding-left:0;
@@ -169,9 +170,9 @@ div.latest-news .joe-redman h1 {
   transform: scale(1.5);
 }
 #carousel .back-position {
-  z-index: -100;
-  opacity: 0;
   left: 35%;
+  opacity: 0;
+  z-index: -100;
   -webkit-transform: scale(.3);
   -moz-transform: scale(.3);
   transform: scale(.3);
@@ -221,23 +222,36 @@ div.contact-hero {
 }
 div.contact-info {
   top: 15%;
-  left: 10%;
-  z-index: 100;
+  left: 7%;
   position: absolute;
-  /*background-color: rgba(0, 0, 0, .015);*/
 }
 div.contact-info ul,
-div.contact-info li {
-  width: 9em;
+div.contact-info ol {
+  margin: 0;
+  padding: 0;
   list-style: none;
   list-style-type: none;
+}
+div.contact-info li {
+  display: inline-block;
+  width: 7em;
+  vertical-align: middle;
+}
+div.contact-info a {
+  font-size: 2em;
+  text-decoration: none;
+  color: black;
 }
 
 /* contact logos */
 /* logos are stored in logos.css */
 .logos {
-  height: 5em;
-  width: 4em;
+  width: 1em;
+  height: 4.7em;
+  margin-left: 0;
+  -webkit-transform: scale(.6);
+  -moz-transform: scale(.6);
+  transform: scale(.6);
 }
 
 /* page wrapper and other class methods */
@@ -245,6 +259,13 @@ div.contact-info li {
   text-align: justify;
   margin-right: 10%;
   margin-left: 10%;
+}
+.contact h2,
+.page-wrapper h2 {
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-family: Quicksand;
+  text-align: center;
 }
 .fixed-bottom {
   position: fixed;

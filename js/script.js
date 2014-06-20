@@ -97,7 +97,6 @@ PhotosCollection.prototype.setPermanentHandlers = function() {
   });
 
   $("body").on("keydown", function(event) {
-    console.log('pressed')
     if(event.keyCode === 39) {
       newPhotosCollection.moveForward();
     } else if (event.keyCode === 37) {
