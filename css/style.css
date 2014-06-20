@@ -293,11 +293,28 @@ div.contact-info a {
 section.credits {
   margin: 0;
   padding: 0;
-  text-align: center;
-  /*background-color: powderblue;*/
+  margin-bottom: 3em;
+  text-align: justify;
+}
+section.credits li,
+section.credits ul {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 40em;
+  margin-bottom: .4em;
 }
 section.credits h2 {
-  /*margin-top: .15em;*/
+  margin-bottom: 2em;
+}
+section.credits ul {
+  margin-bottom: 2em;
+}
+.credits .credit-title {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: .5em;
+  list-style-type: none;
+  text-transform: uppercase;
 }
 
 /* footer */
@@ -314,7 +331,7 @@ footer a {
   text-decoration: none;
 }
 footer li {
+  margin: 0 auto;
   padding: 1.5em;
   display: inline-block;
-  margin: 0 auto;
 }
