@@ -1,17 +1,17 @@
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 // photos view constructor function and prototype renders them
-var PhotosView = function(imageName, imageDescription, imageLayout){
-  this.layout = imageLayout;
+var PhotosView = function(imageName, placeInArray){
+  this.place = placeInArray;
   this.imageName = imageName;
   this.el = $("<li>").addClass("back-position");
-  this.description = $("<p>").html(imageDescription);
 }
 PhotosView.prototype.render = function(){
   $("<img>").attr("src", "images/thumbnails/" + this.imageName)
-    .addClass(this.layout)
+    .attr("id", imagesList['full-size-images'][this.place])
+    .addClass(imagesList['image-layouts'][this.place])
     .appendTo(this.el);
-  this.el.append(this.description);
+  this.el.append($("<p>").html(imagesList['image-descriptions'][this.place]));
 
   $('#photo-carousel').append(this.el);
   newPhotosCollection.models.push(this);
@@ -100,6 +100,9 @@ PhotosCollection.prototype.moveBackward = function() {
 }
 // adds event listeners so user can move carousel forward
 PhotosCollection.prototype.addEventHandlers = function() {
+  $(".center-position").on("click", function() {
+    window.open("images/" + $(this).find("img").attr("id"), "_blank")
+  });
   $(".left-position").on("click", function() {
     newPhotosCollection.moveBackward();
   });
@@ -109,6 +112,7 @@ PhotosCollection.prototype.addEventHandlers = function() {
 }
 // removes event handlers -- called after an event is evoked
 PhotosCollection.prototype.removeEventHandlers = function() {
+  $(".center-position").off("click");
   $(".left-position").off("click");
   $(".right-position").off("click");
 }
@@ -166,9 +170,8 @@ $(document).ready(function() {
   });
 
   $.each(imagesList['image-thumbnails'], function(i, image) {
-    var layout = imagesList['image-layouts'][i];
-    var description = imagesList['image-descriptions'][i];
-    new PhotosView(image, description, layout).render();
+    var placeInArray = i;
+    new PhotosView(image, placeInArray).render();
   });
 
   newPhotosCollection.renderCarousel().setPermanentHandlers();
