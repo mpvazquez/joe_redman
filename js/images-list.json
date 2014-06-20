@@ -1,5 +1,5 @@
 var imagesList = {
-  "full-images": [
+  "full-size-images": [
     "joe-redman-01.jpg",
     "joe-redman-02.jpg",
     "joe-redman-03.jpg",
@@ -30,6 +30,22 @@ var imagesList = {
     "joe-redman-small-12.jpg",
     "joe-redman-small-13.jpg",
     "joe-redman-small-14.jpg"
+  ],
+  "image-layouts": [
+    "portrait",
+    "portrait",
+    "portrait",
+    "landscape-center",
+    "landscape-right",
+    "portrait",
+    "portrait",
+    "landscape-right",
+    "landscape-right",
+    "landscape-center",
+    "landscape-left",
+    "landscape-right",
+    "landscape-right",
+    "landscape-center"
   ],
   "image-descriptions": [
     "Headshot by Billy Bustamante",

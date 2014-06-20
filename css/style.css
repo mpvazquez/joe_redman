@@ -126,7 +126,6 @@ div.latest-news .joe-redman h1 {
 #carousel {
   background-color: rgba(0, 0, 0, .015);
   position: relative;
-  overflow: hidden;
   height: 30em;
 }
 #carousel ul,  
@@ -144,13 +143,19 @@ div.latest-news .joe-redman h1 {
   overflow: hidden;
   position: absolute;
   display: inline-block;
-  background-size: cover;
+  background-size: contain;
   -webkit-transition: all .5s ease-in-out;
   -moz-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 #carousel img {
   width: 100%;
+}
+#carousel img .landscape-right {
+
+}
+#carousel img .landscape-left {
+
 }
 #carousel .left-position {
   z-index: 100;
@@ -176,6 +181,18 @@ div.latest-news .joe-redman h1 {
   -webkit-transform: scale(.3);
   -moz-transform: scale(.3);
   transform: scale(.3);
+}
+#carousel p {
+  color: white;
+  font-size: .7em;
+  font-family: Quicksand;
+  width: 100%;
+  padding: 1em 0;
+  margin: auto;
+  bottom: 0;
+  text-align: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, .4);
 }
 #video-carousel {
   text-align: center;

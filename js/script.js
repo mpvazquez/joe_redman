@@ -1,3 +1,24 @@
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+// photos view constructor function and prototype renders them
+var PhotosView = function(imageName, imageDescription){
+  this.imageName = imageName;
+  this.description = $("<p>").html(imageDescription);
+  this.el = $("<li>").addClass("back-position");
+}
+PhotosView.prototype.render = function(){
+  $("<img>").attr("src", "images/thumbnails/" + this.imageName)
+    .appendTo(this.el);
+  this.el.append(this.description);
+  
+  $('#photo-carousel').append(this.el);
+  newPhotosCollection.models.push(this);
+  return this;
+}
+
+
+
+//////////////////////////////////////////////////////
 //////////////////////////////////////////////////////
 // collection of photos, image element models to render
 // as an image carousel that can expand/shrink
@@ -62,6 +83,7 @@ PhotosCollection.prototype.moveForward = function() {
 // lets user select previous photo oin collection
 PhotosCollection.prototype.moveBackward = function() {
   this.removeEventHandlers();
+
   if(this.startPosition === 0) {
     $(this.models[this.nextPhotoPosition()].el).removeClass()
       .addClass("back-position");
@@ -107,21 +129,9 @@ PhotosCollection.prototype.setPermanentHandlers = function() {
 // new photo collection / start carousel
 var newPhotosCollection = new PhotosCollection();
 
-/////////////////////////////////////////////////////////////
-// photos view constructor function and prototype renders them
-var PhotosView = function(imageName){
-  this.imageName = imageName;
-  this.el = $("<li>").addClass("back-position");
-}
-PhotosView.prototype.render = function(){
-  $("<img>").attr("src", "images/thumbnails/" + this.imageName)
-    .appendTo(this.el);
-  $('#photo-carousel').append(this.el);
-  newPhotosCollection.models.push(this);
-  return this;
-}
 
 
+/////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
 // script below this function will run once the DOM loads
 $(document).ready(function() {
@@ -154,7 +164,8 @@ $(document).ready(function() {
   });
 
   $.each(imagesList['image-thumbnails'], function(i, image) {
-    new PhotosView(image).render();
+    var description = imagesList['image-descriptions'][i];
+    new PhotosView(image, description).render();
   });
 
   newPhotosCollection.renderCarousel().setPermanentHandlers();
