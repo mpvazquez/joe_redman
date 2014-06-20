@@ -132,6 +132,7 @@ $(document).ready(function() {
   var $clearViewport = $window.outerHeight();
 
   $latestNews.hide();
+  $(".credits").hide();
   $nav.addClass("fixed-bottom").next();
 
   setTimeout(function() {
@@ -157,6 +158,10 @@ $(document).ready(function() {
   });
 
   newPhotosCollection.renderCarousel().setPermanentHandlers();
+
+  $("#credits a").on("click", function() {
+    $(".credits").css("display", "block");
+  })
 
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

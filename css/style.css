@@ -222,7 +222,7 @@ div.contact-hero {
 }
 div.contact-info {
   top: 15%;
-  left: 7%;
+  left: 8%;
   position: absolute;
 }
 div.contact-info ul,
@@ -269,6 +269,7 @@ div.contact-info a {
   margin-right: 10%;
   margin-left: 10%;
 }
+.credits h2,
 .contact h2,
 .page-wrapper h2 {
   text-decoration: underline;
@@ -288,11 +289,25 @@ div.contact-info a {
   margin-left: 10%;
 }
 
+/* credits section for website */
+section.credits {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  /*background-color: powderblue;*/
+}
+section.credits h2 {
+  /*margin-top: .15em;*/
+}
+
 /* footer */
 footer {
   font-family: Quicksand;
   text-align: center;
   height: 5em;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 5px 5px 0px rgba(50, 50, 50, 0.75);
 }
 footer a {
   color: gray;
