@@ -160,7 +160,11 @@ $(document).ready(function() {
   newPhotosCollection.renderCarousel().setPermanentHandlers();
 
   $("#credits a").on("click", function() {
-    $(".credits").css("display", "block");
+    if($(".credits").css("display") === "block") {
+      $(".credits").hide();
+    } else {
+      $(".credits").css("display", "block");
+    }
   })
 
   $('a[href*=#]:not([href=#])').click(function() {
