@@ -148,14 +148,12 @@ div.latest-news .joe-redman h1 {
   -moz-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
-#carousel img {
+#carousel img.portrait {
   width: 100%;
 }
-#carousel img .landscape-right {
-
-}
-#carousel img .landscape-left {
-
+#carousel img.landscape {
+  height: 100%;
+  margin-left: -4.5em;
 }
 #carousel .left-position {
   z-index: 100;

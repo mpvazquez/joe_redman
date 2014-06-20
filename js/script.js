@@ -1,16 +1,18 @@
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 // photos view constructor function and prototype renders them
-var PhotosView = function(imageName, imageDescription){
+var PhotosView = function(imageName, imageDescription, imageLayout){
+  this.layout = imageLayout;
   this.imageName = imageName;
-  this.description = $("<p>").html(imageDescription);
   this.el = $("<li>").addClass("back-position");
+  this.description = $("<p>").html(imageDescription);
 }
 PhotosView.prototype.render = function(){
   $("<img>").attr("src", "images/thumbnails/" + this.imageName)
+    .addClass(this.layout)
     .appendTo(this.el);
   this.el.append(this.description);
-  
+
   $('#photo-carousel').append(this.el);
   newPhotosCollection.models.push(this);
   return this;
@@ -164,8 +166,9 @@ $(document).ready(function() {
   });
 
   $.each(imagesList['image-thumbnails'], function(i, image) {
+    var layout = imagesList['image-layouts'][i];
     var description = imagesList['image-descriptions'][i];
-    new PhotosView(image, description).render();
+    new PhotosView(image, description, layout).render();
   });
 
   newPhotosCollection.renderCarousel().setPermanentHandlers();
