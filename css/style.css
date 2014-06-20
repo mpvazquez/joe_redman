@@ -209,6 +209,16 @@ div.latest-news .joe-redman h1 {
   left: -1.7em;
 }
 
+#about-left {
+  display: inline-block;
+  width: 48%;
+}
+#about-right {
+  display: inline-block;
+  width: 48%;
+  float: right;
+}
+
 /* Contact section */
 div.contact-hero {
   background-image: url(../images/joe-redman-08.jpg);
