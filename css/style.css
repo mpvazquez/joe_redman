@@ -357,7 +357,6 @@ section.credits a {
 footer {
   font-family: Quicksand;
   text-align: center;
-  height: 5em;
   -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow:    0px 5px 5px 0px rgba(50, 50, 50, 0.75);
   box-shadow:         0px 5px 5px 0px rgba(50, 50, 50, 0.75);
