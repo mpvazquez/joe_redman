@@ -246,14 +246,13 @@ div.latest-news .joe-redman h1 {
 #arrow-left:hover {
   left: -1.7em;
 }
-
+#about-right,
 #about-left {
+  line-height: 1.8em;
   display: inline-block;
   width: 48%;
 }
 #about-right {
-  display: inline-block;
-  width: 48%;
   float: right;
 }
 
