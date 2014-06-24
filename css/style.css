@@ -16,7 +16,7 @@ header {
 nav {
   width: 100%;
   z-index: 300;
-  max-height: 3em;
+  height: 2.8em;
   text-align: right;
   background-color: white;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.75);
@@ -115,8 +115,8 @@ div.latest-news .updates {
 }
 div.latest-news .joe-redman {
   position: absolute;
-  right: -49.5em;
-  bottom: -10em;
+  right: -48.5em;
+  bottom: -8em;
 }
 div.latest-news .joe-redman h1 {
   text-transform: uppercase;
@@ -248,8 +248,8 @@ div.latest-news .joe-redman h1 {
 }
 #about-right,
 #about-left {
-  line-height: 1.8em;
   display: inline-block;
+  line-height: 1.8em;
   width: 48%;
 }
 #about-right {
@@ -385,4 +385,29 @@ footer li {
   margin: 0 auto;
   padding: 1.5em;
   display: inline-block;
+}
+
+/* Mobile/Responsive-ready media queries */
+
+@media (max-width: 800px) {
+  nav li {
+    display: none;
+  }
+  div.joe-redman {
+    display: none;
+  }
+}
+
+@media (max-width: 1150px) {
+  nav li {
+    font-size: 1.2em;
+    padding-left: 1em;
+    padding-top: .1em;
+  }
+  nav h1 {
+    padding-top: .35em;
+  }
+  div.latest-news .joe-redman {
+    left: 0;
+  }
 }
