@@ -294,15 +294,15 @@ div.contact-info a {
   transform: scale(.6);
 }
 
-/* page wrapper and other class methods */
-.page-wrapper > section {
+/* content wrapper and other class methods */
+.content-wrapper > section {
   text-align: justify;
   margin-right: 10%;
   margin-left: 10%;
 }
 .credits h2,
 .contact h2,
-.page-wrapper h2 {
+.content-wrapper h2 {
   text-decoration: underline;
   text-transform: uppercase;
   font-family: Quicksand;
