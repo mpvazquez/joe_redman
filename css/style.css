@@ -87,7 +87,7 @@ div.hero {
   background-size: 85em auto;
   background-position: left;
   position: relative;
-  height: 45em;
+  height: 43em;
   width: 100%;
 }
 div.latest-news {
@@ -420,11 +420,14 @@ footer li {
   }
   div.latest-news {
     left: 0;
-    top: 49%;
+    top: 48%;
     bottom: 0;
     padding: 0;
     min-width: 100%;
     text-align: center;
+  }
+  div.latest-news ol {
+    padding: 0;
   }
   div.latest-news li:first-child {
     list-style-type: none;
