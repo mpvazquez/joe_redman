@@ -101,9 +101,14 @@ PhotosCollection.prototype.moveBackward = function() {
 // adds event listeners so user can move carousel forward
 PhotosCollection.prototype.addEventHandlers = function() {
   $(".center-position").on("click", function() {
-    window.open("images/" + $(this).find("img").attr("id"), "_blank");
-    $('#carousel .center-position p').fadeIn(2000);
+    if($(window).width() < 1150) {
+      newPhotosCollection.moveForward();
+    } else {
+      window.open("images/" + $(this).find("img").attr("id"), "_blank");
+    }
   });
+  $('#carousel .center-position p').fadeIn(2000);
+
   $(".left-position").on("click", function() {
     newPhotosCollection.moveBackward();
   });
