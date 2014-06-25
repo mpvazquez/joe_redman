@@ -28,14 +28,21 @@ nav li {
   padding-left: 2.5em;
   font-size: 1.5em;
 }
-nav ul {
+nav ul#main-nav {
   display: inline-block;
   padding-right: 10%;
   margin: .5em 0;
 }
-nav ul a {
+nav ul#main-nav a {
   text-decoration: none;
   color: grey;
+}
+nav ul#hamburger {
+  margin-right: 10%; 
+  margin-top: .7em;
+  display: none;
+  height: 1.5em;
+  width: 1.5em;
 }
 nav h1 a {
   text-decoration: none;
@@ -395,6 +402,14 @@ footer li {
   }
   div.joe-redman {
     display: none;
+  }
+  nav ul#hamburger {
+    display: inline-block;
+    background-size: cover;
+  }
+  #about-right,
+  #about-left {
+    width: 100%;
   }
 }
 
