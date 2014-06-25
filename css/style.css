@@ -456,4 +456,11 @@ footer li {
   div.latest-news .joe-redman {
     left: 0;
   }
+  div.contact-hero {
+    background-position: right;
+  }
+  div.contact-info ul {
+    background-color: rgba(255, 255, 255, .5);
+    padding: 1.5em;
+  }
 }
