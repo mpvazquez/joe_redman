@@ -199,6 +199,6 @@ $(document).ready(function() {
   });
 
   $('nav ul#hamburger').on("click", function() {
-    
+    console.log('clicked');
   });
 });

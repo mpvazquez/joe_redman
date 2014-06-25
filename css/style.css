@@ -6,6 +6,10 @@
 /* CSS RESET */
 html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,  pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
 
+body {
+  overflow-x:hidden;
+}
+
 /* website header */
 header {
   top: 0px;
@@ -404,12 +408,29 @@ footer li {
   nav ul#hamburger {
     display: inline-block;
   }
+  div.hero {
+    background-position: -30em;
+  }
   div.joe-redman {
     display: none;
   }
   div.headline h1 {
     font-size: 8em;
     padding-top: 35%;
+  }
+  div.latest-news {
+    left: 0;
+    top: 49%;
+    bottom: 0;
+    padding: 0;
+    min-width: 100%;
+    text-align: center;
+  }
+  div.latest-news li:first-child {
+    list-style-type: none;
+  }
+  div.latest-news h2 {
+    font-size: 2em;
   }
   #about-right,
   #about-left {
