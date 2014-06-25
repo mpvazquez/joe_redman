@@ -48,10 +48,10 @@ nav ul#main-nav a {
 nav ul#hamburger {
   background-size: cover;
   margin-right: 10%; 
-  margin-top: .7em;
+  margin-top: .75em;
   display: none;
-  height: 1.5em;
-  width: 1.5em;
+  height: 1.3em;
+  width: 1.3em;
 }
 nav li {
   display: inline-block;

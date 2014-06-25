@@ -198,7 +198,7 @@ $(document).ready(function() {
     }
   });
 
-  if($window.height() > $(".hero").height) {
-    $(".hero").css("height", $window.height());
-  }
+  $('nav ul#hamburger').on("click", function() {
+    
+  });
 });
