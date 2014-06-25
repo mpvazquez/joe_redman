@@ -65,6 +65,13 @@ nav li {
 /* end nav bar */
 
 
+/* Start hidden slider menu */
+ul.slider-menu {
+  display: none;
+}
+
+/* End hidden slider menu */
+
 /* start main 'Joe Redman' headline that fades out */
 div.headline {
   height: 100%;
