@@ -206,4 +206,9 @@ $(document).ready(function() {
   $('nav ul#hamburger').on("click", function() {
     console.log('clicked');
   });
+
+  if($window.height() > $('.hero').height()) {
+    $('.hero').css("height", $window.height())
+      .css("background-size", "cover");
+  }
 });
