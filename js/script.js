@@ -207,6 +207,11 @@ $(document).ready(function() {
     console.log('clicked');
   });
 
+  var backgroundWidth = $('.hero').css("background-size");
+
+  if($window.width() > parseInt(backgroundWidth)) {
+    $('.hero').css("background-size", $window.width() + "px auto");
+  }
   if($window.height() > $('.hero').height()) {
     $('.hero').css("height", $window.height())
       .css("background-size", "cover");
