@@ -203,23 +203,23 @@ $(document).ready(function() {
     }
   });
 
-  $('nav ul#hamburger').on("click", function() {
+  $('#hamburger').on("click", function() {
     var pageContentWidth = $('.page-wrapper').width();
     $('.page-wrapper').css("width", pageContentWidth);
 
     $('section.content-layer').css("display", "block");
-
     $('.content-wrapper').bind("touchmove");
+
     $('.content-wrapper').animate({"margin-right": "30%"}, 
-      "slow", "swing", function() {
+      "slow", "swing").promise().done(function() {
         console.log('click hamburger');
-    });
+      });
   });
 
   $(".page-wrapper:not(#hamburger)").on("click", function() {
     $('.content-wrapper').unbind("touchmove");
     $('.content-wrapper').animate({"margin-right": 0}, 
-      "slow", 'swing', function() {
+      "slow", 'swing').promise().done(function() {
         console.log('click content');
         $(".page-wrapper").css("width", "auto");
         $("section.content-layer").css("display", "none");

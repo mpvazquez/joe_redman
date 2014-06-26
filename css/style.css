@@ -68,8 +68,9 @@ nav li {
 /* Start hidden slider menu and content layer */
 ul.slider-menu {
   display: none;
+  background-color: #8e8e93;
 }
-section.content-layer {
+div.content-layer {
   position: absolute;
   overflow-x: hidden;
   overflow-y: auto;
@@ -340,9 +341,6 @@ div.contact-info a {
 }
 
 /* content wrapper and other class methods */
-.content-wrapper {
-  position: relative;
-}
 .content-wrapper > section {
   text-align: justify;
   margin-right: 10%;
