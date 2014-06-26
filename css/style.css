@@ -65,12 +65,22 @@ nav li {
 /* end nav bar */
 
 
-/* Start hidden slider menu */
+/* Start hidden slider menu and content layer */
 ul.slider-menu {
   display: none;
 }
-
-/* End hidden slider menu */
+section.content-layer {
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: none;
+  z-index: 400;
+  height: 100%;
+  width: 30%;
+  right: 0;
+  top: 0;
+}
+/* End hidden slider menu and content layer */
 
 /* start main 'Joe Redman' headline that fades out */
 div.headline {
@@ -330,6 +340,9 @@ div.contact-info a {
 }
 
 /* content wrapper and other class methods */
+.content-wrapper {
+  position: relative;
+}
 .content-wrapper > section {
   text-align: justify;
   margin-right: 10%;
@@ -427,6 +440,7 @@ footer li {
   }
   div.contact-hero {
     background-position: right;
+    /*background-size: 85em auto;*/
   }
   div.contact-info ul {
     background-color: rgba(255, 255, 255, .5);
@@ -455,7 +469,7 @@ footer li {
     display: inline-block;
   }
   div.hero {
-    background-position: -20em;
+    background-position: -30em;
   }
   div.joe-redman {
     display: none;
