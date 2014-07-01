@@ -8,10 +8,11 @@ html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote, 
 
 body {
   position: relative;
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 div.page-wrapper {
   position: absolute;
+  background-color: white;
 }
 
 /* website header */
@@ -75,25 +76,26 @@ ul.slider-menu {
   right: 0;
   width: 30%;
   height: 100%;
-  z-index: -3000;
+  z-index: -300;
   /*display: none;*/
   position: fixed;
-  list-style-type: none;
   background: #8e8e93;
-  background: -moz-linear-gradient(90deg, #3e3c3d 0%,#2d2c2d 100%);
   background: -webkit-linear-gradient(90deg, #3e3c3d 0%,#2d2c2d 100%);
-  background: -o-linear-gradient(90deg, #3e3c3d 0%,#2d2c2d 100%);
+  background: -moz-linear-gradient(90deg, #3e3c3d 0%,#2d2c2d 100%);
   background: -ms-linear-gradient(90deg, #3e3c3d 0%,#2d2c2d 100%);
+  background: -o-linear-gradient(90deg, #3e3c3d 0%,#2d2c2d 100%);
   background: linear-gradient(180deg, #3e3c3d 0%,#2d2c2d 100%);
 }
 ul.slider-menu li {
   border-bottom: 1px solid #222222;
   border-top: 1px solid #444444;
+  list-style-type: none;
   padding: 1em;
   width: 100%;
 }
 ul.slider-menu a {
   text-decoration: none;
+  padding-left: 1.7em;
   font-size: 1.5em;
   color: white;
 }
@@ -186,7 +188,7 @@ div.latest-news .joe-redman h1 {
 
 /* image carousel */
 #carousel {
-  background-color: rgba(0, 0, 0, .015);
+  background-color: rgba(0, 0, 0, .02);
   position: relative;
   height: 30em;
 }
@@ -288,20 +290,20 @@ div.latest-news .joe-redman h1 {
 }
 #arrow-right {
   bottom: -14px;
-  right: -.7em;
+  right: -2.8em;
 }
 #arrow-left {
   bottom: 0;
-  left: -1.5em;
+  left: -2.8em;
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 #arrow-right:hover {
-  right: -.9em;
+  right: -3.3em;
 }
 #arrow-left:hover {
-  left: -1.7em;
+  left: -3.3em;
 }
 #about-right,
 #about-left {
@@ -465,14 +467,13 @@ footer li {
   }
   div.contact-hero {
     background-position: right;
-    /*background-size: 85em auto;*/
   }
   div.contact-info ul {
     background-color: rgba(255, 255, 255, .5);
     padding: 1.5em;
   }
   footer li:not(#credits) {
-    display: none;
+    /*display: none;*/
   }
   #video-carousel {
     padding-bottom: 65%;
@@ -494,7 +495,7 @@ footer li {
     display: inline-block;
   }
   div.hero {
-    background-position: -30em;
+    background-position: center; 
   }
   div.joe-redman {
     display: none;
@@ -549,5 +550,18 @@ footer li {
     -webkit-transform: scale(.3);
     -moz-transform: scale(.3);
     transform: scale(.3);
+  }
+}
+@media(max-width: 650px) {
+  div.hero {
+    background-image: url(../images/thumbnails/joe-redman-small-04.jpg);
+    background-size: cover; 
+  }
+  div.contact-hero {
+    background-image: url(../images/thumbnails/joe-redman-small-08.jpg);
+    background-size: cover;
+  }
+  div.headline h1 {
+    font-size: 6em;
   }
 }
