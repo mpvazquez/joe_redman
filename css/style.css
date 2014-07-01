@@ -7,7 +7,11 @@
 html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,  pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
 
 body {
+  position: relative;
   overflow-x:hidden;
+}
+div.page-wrapper {
+  position: absolute;
 }
 
 /* website header */
@@ -67,8 +71,31 @@ nav li {
 
 /* Start hidden slider menu and content layer */
 ul.slider-menu {
-  display: none;
-  background-color: #8e8e93;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  z-index: -3000;
+  /*display: none;*/
+  position: fixed;
+  list-style-type: none;
+  background: #8e8e93;
+  background: -moz-linear-gradient(90deg, #3e3c3d 0%,#2d2c2d 100%);
+  background: -webkit-linear-gradient(90deg, #3e3c3d 0%,#2d2c2d 100%);
+  background: -o-linear-gradient(90deg, #3e3c3d 0%,#2d2c2d 100%);
+  background: -ms-linear-gradient(90deg, #3e3c3d 0%,#2d2c2d 100%);
+  background: linear-gradient(180deg, #3e3c3d 0%,#2d2c2d 100%);
+}
+ul.slider-menu li {
+  border-bottom: 1px solid #222222;
+  border-top: 1px solid #444444;
+  padding: 1em;
+  width: 100%;
+}
+ul.slider-menu a {
+  text-decoration: none;
+  font-size: 1.5em;
+  color: white;
 }
 div.content-layer {
   position: absolute;

@@ -205,15 +205,19 @@ $(document).ready(function() {
 
   $('#hamburger').on("click", function() {
     var pageContentWidth = $('.page-wrapper').width();
+    console.log(pageContentWidth);
     $('.page-wrapper').css("width", pageContentWidth);
 
     $('section.content-layer').css("display", "block");
     $('.content-wrapper').bind("touchmove");
+    console.log(pageContentWidth);
 
     $('.content-wrapper').animate({"margin-right": "30%"}, 
       "slow", "swing").promise().done(function() {
-        console.log('click hamburger');
-      });
+      console.log('click hamburger');
+      console.log(pageContentWidth);
+    });
+    console.log(pageContentWidth);
   });
 
   $(".page-wrapper:not(#hamburger)").on("click", function() {
