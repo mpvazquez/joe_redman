@@ -9,6 +9,9 @@ html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote, 
 body {
   position: relative;
   overflow-x: hidden;
+  -webkit-box-shadow: 5px 0px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    5px 0px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         5px 0px 5px 0px rgba(50, 50, 50, 0.75);
 }
 div.page-wrapper {
   position: absolute;
