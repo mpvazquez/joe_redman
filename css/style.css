@@ -567,7 +567,7 @@ footer li {
     transform: scale(.3);
   }
 }
-@media(max-width: 650px) {
+@media(max-device-width: 650px) {
   div.hero {
     background-image: url(../images/thumbnails/joe-redman-small-04.jpg);
     background-size: cover; 
