@@ -3,7 +3,6 @@
 @import url(http://fonts.googleapis.com/css?family=Archivo+Narrow);
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
-/* CSS RESET */
 html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,  pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
 
 body {
@@ -516,7 +515,7 @@ footer li {
   }
   div.latest-news {
     left: 0;
-    top: 48%;
+    top: 47%;
     bottom: 0;
     padding: 0;
     min-width: 100%;
@@ -567,14 +566,16 @@ footer li {
     transform: scale(.3);
   }
 }
-@media(max-device-width: 650px) {
+@media (max-width: 650px) {
   div.hero {
-    background-image: url(../images/thumbnails/joe-redman-small-04.jpg);
+    height: 568px;
     background-size: cover; 
+    background-image: url(../images/thumbnails/joe-redman-small-04.jpg);
   }
   div.contact-hero {
-    background-image: url(../images/thumbnails/joe-redman-small-08.jpg);
+    height: 568px;
     background-size: cover;
+    background-image: url(../images/thumbnails/joe-redman-small-08.jpg);
   }
   div.headline h1 {
     font-size: 6em;
