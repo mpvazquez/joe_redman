@@ -226,9 +226,9 @@ $(document).ready(function() {
   // });
 
   if($window.width() > parseInt($('.hero').css("background-size"))) {
-    $('.hero').css("background-size", $window.width() + "px auto");
+    $('.hero, .contact-hero').css("background-size", $window.width() + "px auto");
   }
   if($window.height() > $('.hero').height()) {
-    $('.hero').css("height", $window.height() + "px");
+    $('.hero, .contact-hero').css("height", $window.height() + "px");
   }
 });
