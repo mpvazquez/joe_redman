@@ -203,17 +203,17 @@ $(document).ready(function() {
     }
   });
 
-  $('#hamburger').on("click", function() {
-    $('.page-wrapper').css("width", $('.page-wrapper').width());
+  // $('#hamburger').on("click", function() {
+  //   $('.page-wrapper').css("width", $('.page-wrapper').width());
 
-    $('section.content-layer').css("display", "block");
-    $('.content-wrapper').bind("touchmove");
+  //   $('section.content-layer').css("display", "block");
+  //   $('.content-wrapper').bind("touchmove");
 
-    $('.content-wrapper').animate({"margin-right": "30%"}, 
-      "slow", "swing").promise().done(function() {
-      console.log('click hamburger');
-    });
-  });
+  //   $('.content-wrapper').animate({"margin-right": "30%"}, 
+  //     "slow", "swing").promise().done(function() {
+  //     console.log('click hamburger');
+  //   });
+  // });
 
   // $("body:not(#hamburger)").on("click", function() {
   //   $('.content-wrapper').unbind("touchmove");
