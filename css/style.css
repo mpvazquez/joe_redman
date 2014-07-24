@@ -138,7 +138,6 @@ div.headline h1 {
 div.hero {
   background-image: url(../images/joe-redman-04.jpg);
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: 85em auto;
   background-position: left;
   position: relative;
@@ -327,7 +326,6 @@ div.latest-news .joe-redman h1 {
 /* Contact section */
 div.contact-hero {
   background-image: url(../images/joe-redman-08.jpg);
-  background-attachment: fixed;
   background-size: cover;
   position: relative;
   margin-right: 0;
