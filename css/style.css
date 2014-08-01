@@ -13,7 +13,6 @@ body {
   box-shadow:         5px 0px 5px 0px rgba(50, 50, 50, 0.75);
 }
 div.page-wrapper {
-  position: absolute;
   background-color: white;
 }
 
@@ -85,7 +84,6 @@ ul.slider-menu {
   width: 30%;
   height: 100%;
   z-index: -300;
-  /*display: none;*/
   position: fixed;
   background: #8e8e93;
   background: -webkit-linear-gradient(90deg, #3e3c3d 0%,#2d2c2d 100%);
@@ -103,7 +101,7 @@ ul.slider-menu li {
 }
 ul.slider-menu a {
   text-decoration: none;
-  padding-left: 1.7em;
+  padding-left: 0;
   font-size: 1.5em;
   color: white;
 }
@@ -480,7 +478,7 @@ footer li {
     padding: 1.5em;
   }
   footer li:not(#credits) {
-    /*display: none;*/
+    display: none;
   }
   #video-carousel {
     padding-bottom: 65%;
@@ -568,7 +566,7 @@ footer li {
   div.hero {
     height: 568px;
     background-size: cover; 
-    background-image: url(../images/thumbnails/joe-redman-small-04.jpg);
+    /*background-image: url(../images/thumbnails/joe-redman-small-04.jpg);*/
   }
   div.contact-hero {
     height: 568px;
