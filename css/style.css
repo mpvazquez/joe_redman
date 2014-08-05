@@ -285,7 +285,15 @@ div.latest-news .joe-redman h1 {
   width: 100%;
   height: 75%;
 }
-
+#carousel-item-description {
+  left: 12%;
+  width: 75%;
+  top: 25.3em;
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  vertical-align: top;
+}
 /* carousel arrows */
 /* logos are stored in logos.css */
 #arrow-left,
@@ -566,7 +574,7 @@ footer li {
   div.hero {
     height: 568px;
     background-size: cover; 
-    /*background-image: url(../images/thumbnails/joe-redman-small-04.jpg);*/
+    background-image: url(../images/thumbnails/joe-redman-small-04.jpg);
   }
   div.contact-hero {
     height: 568px;

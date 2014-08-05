@@ -1,17 +1,17 @@
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 // photos view constructor function and prototype renders them
-var PhotosView = function(imageName, placeInArray){
-  this.place = placeInArray;
+var PhotosView = function(imageName, imageIndex){
+  this.imageIndex = imageIndex;
   this.imageName = imageName;
   this.el = $("<li>").addClass("back-position");
 }
 PhotosView.prototype.render = function(){
   $("<img>").attr("src", "images/thumbnails/" + this.imageName)
-    .attr("id", imagesList['full-size-images'][this.place])
-    .addClass(imagesList['image-layouts'][this.place])
+    .attr("id", imagesList['full-size-images'][this.imageIndex])
+    .addClass(imagesList['image-layouts'][this.imageIndex])
     .appendTo(this.el);
-  this.el.append($("<p>").html(imagesList['image-descriptions'][this.place]));
+  this.el.append($("<p>").html(imagesList['image-descriptions'][this.imageIndex]));
 
   $('#photo-carousel').append(this.el);
   newPhotosCollection.models.push(this);
@@ -101,13 +101,23 @@ PhotosCollection.prototype.moveBackward = function() {
 // adds event listeners so user can move carousel forward
 PhotosCollection.prototype.addEventHandlers = function() {
   $(".center-position").on("click", function() {
-    if($(window).width() < 1150) {
+    if($(window).width() < 800) {
       newPhotosCollection.moveForward();
     } else {
       window.open("images/" + $(this).find("img").attr("id"), "_blank");
     }
   });
-  $('#carousel .center-position p').fadeIn(2000);
+
+  if($(window).width() < 800) {
+    var description = $('#carousel .center-position p');
+    $(description).css("display", "none");
+    $("#carousel #carousel-item-description").empty()
+      .append($("<p>").append($(description).html()))
+      .append("<strong>Hi-Res Download</strong>")
+      .on("click", function() {
+        window.open("images/" + $('#carousel .center-position').find("img").attr("id"), "_blank");
+      });
+  }
 
   $(".left-position").on("click", function() {
     newPhotosCollection.moveBackward();
@@ -179,8 +189,8 @@ $(document).ready(function() {
   });
 
   $.each(imagesList['image-thumbnails'], function(i, image) {
-    var placeInArray = i;
-    new PhotosView(image, placeInArray).render();
+    var imageIndex = i;
+    new PhotosView(image, imageIndex).render();
   });
 
   newPhotosCollection.renderCarousel().setPermanentHandlers();
