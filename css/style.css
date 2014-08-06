@@ -577,12 +577,12 @@ section.credits {
   div.hero {
     height: 568px;
     background-size: cover; 
-    background-image: url(../images/thumbnails/joe-redman-small-04.jpg);
+    background-image: url(../images/mobile-bg/joe-redman-mobile-01.jpg);
   }
   div.contact-hero {
     height: 568px;
     background-size: cover;
-    background-image: url(../images/thumbnails/joe-redman-small-08.jpg);
+    background-image: url(../images/mobile-bg/joe-redman-mobile-02.jpg);
   }
   div.headline h1 {
     font-size: 6em;
