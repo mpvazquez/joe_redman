@@ -2,8 +2,8 @@
 /////////////////////////////////////////////////////////////
 // photos view constructor function and prototype renders them
 var PhotosView = function(imageName, imageIndex){
-  this.imageIndex = imageIndex;
   this.imageName = imageName;
+  this.imageIndex = imageIndex;
   this.el = $("<li>").addClass("back-position");
 }
 PhotosView.prototype.render = function(){
@@ -128,9 +128,10 @@ PhotosCollection.prototype.addEventHandlers = function() {
 }
 // removes event handlers -- called after an event is evoked
 PhotosCollection.prototype.removeEventHandlers = function() {
+  $("#carousel #carousel-item-description").off("click");
   $(".center-position").off("click");
-  $(".left-position").off("click");
   $(".right-position").off("click");
+  $(".left-position").off("click");
 }
 PhotosCollection.prototype.setPermanentHandlers = function() {
   $("#arrow-left").on("click", function() {
@@ -180,16 +181,17 @@ $(document).ready(function() {
 
   $window.scroll(function() {
     if ( $window.scrollTop() <= 0) {
-      $nav.removeClass('fixed-top').next();
+      $nav.removeClass('fixed-top').next()
+        .css("padding-top", "0");
       $nav.addClass('fixed-bottom').next();
-      // $latestNews.fadeIn(2000);    
     } else if ($window.scrollTop() < $clearViewport) {
-      $nav.removeClass().next();
-      // $latestNews.fadeOut(1000);
+      $nav.removeClass().next()
+        .css("padding-top", "0");;
     } else {
-      $nav.addClass('fixed-top').next();
+      $nav.addClass('fixed-top').next()
+        .css("padding-top", "40px");
     }
-    if(($('nav').hasClass("fixed-bottom") && $('nav.fixed-bottom').css("width")) || ($('nav').hasClass("fixed-top") && $('nav.fixed-top').css("width"))) {
+    if(($nav.hasClass("fixed-bottom") && $('nav.fixed-bottom').css("width")) || ($nav.hasClass("fixed-top") && $('nav.fixed-top').css("width"))) {
       $('nav.fixed-bottom, nav.fixed-top').css("width", "100%");
     }
   });
@@ -201,6 +203,7 @@ $(document).ready(function() {
 
   newPhotosCollection.renderCarousel().setPermanentHandlers();
 
+  //display credits section on web page
   $("#credits a, .slider-menu a").on("click", function() {
     if($(".credits").css("display") === "block") {
       $(".credits").hide();

@@ -28,6 +28,7 @@ nav {
   z-index: 300;
   height: 2.8em;
   text-align: right;
+  font-family: Quicksand;
   background-color: white;
   background: rgb(255, 240, 255);
   background: -moz-linear-gradient(90deg, #FCFCFC 10%, #F0F0F0 90%);
@@ -107,8 +108,8 @@ ul.slider-menu a {
 }
 div.content-layer {
   position: absolute;
-  overflow-x: hidden;
-  overflow-y: auto;
+  /*overflow-x: hidden;
+  overflow-y: auto;*/
   display: none;
   z-index: 400;
   height: 100%;
@@ -585,5 +586,8 @@ section.credits {
   }
   div.headline h1 {
     font-size: 6em;
+  }
+  #carousel img.landscape {
+    margin-left: -11em;
   }
 }
