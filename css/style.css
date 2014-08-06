@@ -177,12 +177,12 @@ div.latest-news .updates {
   display: inline-block;
   width: 100%;
 }
-div.latest-news .joe-redman {
+div.joe-redman {
   position: absolute;
-  right: -48.5em;
-  bottom: -8em;
+  right: 10%;
+  bottom: 10%;
 }
-div.latest-news .joe-redman h1 {
+div.joe-redman h1 {
   text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
   text-transform: uppercase;
   color: rgba(0, 0, 0, .6);
@@ -475,7 +475,7 @@ footer li {
   div.headline h1 {
     padding-top: 25%;
   }
-  div.latest-news .joe-redman {
+  div.joe-redman {
     left: 0;
   }
   div.contact-hero {
