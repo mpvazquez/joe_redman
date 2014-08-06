@@ -569,6 +569,9 @@ footer li {
     -moz-transform: scale(.3);
     transform: scale(.3);
   }
+  #carousel img.landscape {
+    margin-left: 0;
+  }
 }
 @media (max-width: 650px) {
   div.hero {
