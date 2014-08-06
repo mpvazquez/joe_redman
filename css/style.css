@@ -127,7 +127,7 @@ div.headline h1 {
   color: rgba(255,255,255,.8);
   font-family: Archivo Narrow;
   text-align: center;
-  padding-top: 15%;
+  padding-top: 20%;
   font-size: 10em;
   margin: 0;
 }
@@ -186,7 +186,6 @@ div.joe-redman h1 {
   text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
   text-transform: uppercase;
   color: rgba(0, 0, 0, .6);
-  white-space: nowrap;
   font-weight: 400;
   font-size: 3.5em;
 }
@@ -414,7 +413,6 @@ div.contact-info a {
 section.credits {
   padding: 0;
   margin: 0 10%;
-  margin-bottom: 3em;
   font-family: Roboto;
   text-align: justify;
 }
@@ -439,9 +437,6 @@ section.credits ul {
   list-style-type: none;
   text-transform: uppercase;
 }
-section.credits a {
-  color: black;
-}
 
 /* footer */
 footer {
@@ -460,6 +455,10 @@ footer li {
   padding: 1.5em;
   display: inline-block;
 }
+section.credits {
+  margin-bottom: 0;
+  padding-bottom: 2em;
+}
 
 /* Mobile/Responsive-ready media queries */
 
@@ -476,7 +475,7 @@ footer li {
     padding-top: 25%;
   }
   div.joe-redman {
-    left: 0;
+    left: 10%;
   }
   div.contact-hero {
     background-position: right;

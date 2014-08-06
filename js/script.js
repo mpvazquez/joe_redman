@@ -168,7 +168,13 @@ $(document).ready(function() {
   $nav.addClass("fixed-bottom").next();
 
   setTimeout(function() {
-    $(".headline").fadeOut(3500);
+    $(".headline").fadeOut(3500, function() {
+      $(".headline").addClass("joe-redman")
+        .removeClass("headline");
+      if ($(window).width() > 800) {
+        $(".joe-redman").fadeIn(1000);
+      }
+    });
     $latestNews.fadeIn(5000);
   }, 500);
 
@@ -218,38 +224,28 @@ $(document).ready(function() {
 
   $('#hamburger').on("click", function(e) {
     e.stopPropagation();
-    $('.slider-menu').css("z-index", "100");
-    $('.page-wrapper').css("width", $('.page-wrapper').width());
+    if($('.page-wrapper').css("position") !== "absolute") {
+      $('.page-wrapper')
+        .css("width", $('.page-wrapper').width())
+        .css("position", "absolute");
 
-    $('section.content-layer').css("display", "block");
+      $('section.content-layer').css("display", "block");
 
-    $('.content-wrapper').animate({"margin-right": "30%"}, 
-      "slow", "swing").promise().done(function() {
-      console.log('click hamburger');
-    });
-    if($('nav').hasClass("fixed-bottom") || $('nav').hasClass("fixed-top")) {
-      $('nav.fixed-bottom, nav.fixed-top').css("width", "70%");
+      $('.page-wrapper')
+        .animate({"right": "30%"}, 
+        "slow", "swing");
     }
   });
 
-  $('.slider-menu a').on("click", function() {
-    $('.slider-menu').css("z-index", "-300");
-    $('.content-wrapper').animate({"margin-right": 0}, 
-      "fast", 'swing').promise().done(function() {
-      // $(".page-wrapper").css("width", "auto");
-      $("section.content-layer").css("display", "none");
-    });
-  });
-
-  $("body:not(#hamburger)").on("click", function() {
-    $('.slider-menu').css("z-index", "-300");
-    $('.content-wrapper').animate({"margin-right": 0}, 
-      "slow", 'swing').promise().done(function() {
-      $(".page-wrapper").css("width", "auto");
-      $("section.content-layer").css("display", "none");
-    });
-    if($('nav').hasClass("fixed-bottom") || $('nav').hasClass("fixed-top")) {
-      $('nav.fixed-bottom, nav.fixed-top').css("width", "100%");
+  $("body, .slider-menu a").on("click", function() {
+    if($('.page-wrapper').css("position") === "absolute") {
+      $('.page-wrapper').animate({"right": 0}, 
+        "slow", 'swing').promise().done(function() {
+        $(".page-wrapper")
+          .css("width", "auto")
+          .css("position", "inherit");
+        $("section.content-layer").css("display", "none");
+      });
     }
   });
 
