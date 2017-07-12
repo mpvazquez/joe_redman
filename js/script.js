@@ -1,5 +1,3 @@
-/////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////
 // photos view constructor function and prototype renders them
 var PhotosView = function(imageName, imageIndex){
   this.imageName = imageName;
@@ -18,10 +16,6 @@ PhotosView.prototype.render = function(){
   return this;
 }
 
-
-
-//////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
 // collection of photos, image element models to render
 // as an image carousel that can expand/shrink
 var PhotosCollection = function(){
