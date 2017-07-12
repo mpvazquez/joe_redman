@@ -1,11 +1,11 @@
 $(document).ready(function() {
-  // photos view constructor function and prototype renders them
-  var PhotosView = function(imageName, imageIndex){
+  // carousel item constructor function and render prototype
+  var CarouselItem = function(imageName, imageIndex){
     this.imageName = imageName;
     this.imageIndex = imageIndex;
     this.el = $("<li>").addClass("back-position");
   }
-  PhotosView.prototype.render = function(){
+  CarouselItem.prototype.render = function(){
     $("<img>").attr("src", "images/thumbnails/" + this.imageName)
       .attr("id", imagesList['full-size-images'][this.imageIndex])
       .addClass(imagesList['image-layouts'][this.imageIndex])
@@ -13,7 +13,7 @@ $(document).ready(function() {
     this.el.append($("<p>").html(imagesList['image-descriptions'][this.imageIndex]));
 
     $('#photo-carousel').append(this.el);
-    newPhotosCollection.models.push(this);
+    carousel.models.push(this);
     return this;
   }
 
@@ -97,7 +97,7 @@ $(document).ready(function() {
   PhotosCollection.prototype.addEventHandlers = function() {
     $(".center-position").on("click", function() {
       if($(window).width() < 800) {
-        newPhotosCollection.moveForward();
+        carousel.moveForward();
       } else {
         window.open("images/" + $(this).find("img").attr("id"), "_blank");
       }
@@ -115,10 +115,10 @@ $(document).ready(function() {
     }
 
     $(".left-position").on("click", function() {
-      newPhotosCollection.moveBackward();
+      carousel.moveBackward();
     });
     $(".right-position").on("click", function() {
-      newPhotosCollection.moveForward();
+      carousel.moveForward();
     });
   }
   // removes event handlers -- called after an event is evoked
@@ -130,28 +130,23 @@ $(document).ready(function() {
   }
   PhotosCollection.prototype.setPermanentHandlers = function() {
     $("#arrow-left").on("click", function() {
-      newPhotosCollection.moveBackward();
+      carousel.moveBackward();
     });
     $("#arrow-right").on("click", function() {
-      newPhotosCollection.moveForward();
+      carousel.moveForward();
     });
 
     $("body").on("keydown", function(event) {
       if(event.keyCode === 39) {
-        newPhotosCollection.moveForward();
+        carousel.moveForward();
       } else if (event.keyCode === 37) {
-        newPhotosCollection.moveBackward();
+        carousel.moveBackward();
       }
     });
   }
   // new photo collection / start carousel
-  var newPhotosCollection = new PhotosCollection();
+  var carousel = new PhotosCollection();
 
-
-
-  /////////////////////////////////////////////////////////
-  /////////////////////////////////////////////////////////
-  // script below this function will run once the DOM loads
   $(document).ready(function() {
     var $nav = $('nav');
     var $window = $(window);
@@ -201,10 +196,10 @@ $(document).ready(function() {
 
     $.each(imagesList['image-thumbnails'], function(i, image) {
       var imageIndex = i;
-      new PhotosView(image, imageIndex).render();
+      new CarouselItem(image, imageIndex).render();
     });
 
-    newPhotosCollection.renderCarousel().setPermanentHandlers();
+    carousel.renderCarousel().setPermanentHandlers();
 
     //display credits section on web page
     $("#credits a, .slider-menu a").on("click", function() {
