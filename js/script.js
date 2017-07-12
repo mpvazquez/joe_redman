@@ -196,6 +196,12 @@ $(document).ready(function() {
     }
   });
 
+  $window.resize(function() {
+    if($(window).width() < 800) {
+      $(".joe-redman").css("display", "none");
+    }
+  });
+
   $.each(imagesList['image-thumbnails'], function(i, image) {
     var imageIndex = i;
     new PhotosView(image, imageIndex).render();
