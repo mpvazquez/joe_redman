@@ -191,9 +191,11 @@ $(document).ready(function() {
   });
 
   $window.resize(function() {
-    if($(window).width() < 800) {
+    if($window.width() < 800) {
       $(".joe-redman").css("display", "none");
+      return;
     }
+    $(".joe-redman").css("display", "block");
   });
 
   $.each(imagesList['image-thumbnails'], function(i, image) {
